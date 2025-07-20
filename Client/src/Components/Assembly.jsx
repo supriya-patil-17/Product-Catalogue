@@ -166,8 +166,9 @@ const Assembly = () => {
   };
 
   return (
-    <div className="body text-red-800">
-      <h1 className="h1">ASSEMBLY</h1>
+    <div className="body text-red-800
+      md:text-amber-600 transition duration-500">
+      <h1 className="h1 p-5  text-5xl">ASSEMBlY</h1>
       <div className="searchBox">
         <input
           type="text"
