@@ -1,0 +1,102 @@
+/* Assembly styles */
+.body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 10px;
+}
+.h1 {
+  text-align: center;
+  color: #333;
+}
+.searchBox {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.block {
+  background-color: #ccdee6e6;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.descriptionItem {
+  margin: 10px 0;
+}
+.img {
+  max-width: 60%;
+  height: auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.a {
+  color: hsl(207, 93%, 22%);
+  text-decoration: underline;
+}
+.highlight {
+  background-color: #ebeb75;
+  font-weight: bold;
+}
+.fullDescription {
+  display: none;
+  margin-top: 10px;
+}
+.fullDescription.show {
+  display: block;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal.show {
+  display: block;
+}
+.modalContent {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.input {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.resetBtn {
+  margin-bottom: 15px;
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
