@@ -2,140 +2,139 @@
 import React, { useState } from "react";
 import "../styles/assembly.css";
 
-const parts = 
-[
-  {
-    name: "Neck Ring Holder STR Assly",
-    ref: "23-1167-2",
-    img: "C:\\Project2\\Photos\\23-1167-2.jfif",
-    details: (
-      <>
-        Spare Part Name - Funnel Mechanism<br />
-        Machine Size - 6-1/4&quot; 70 mm<br />
-        Reference No - 23-1167-2<br />
-        Lead Time - 10 weeks<br />
-        Weight - <br />
-        Machine Type - <br />
-        Kit Availability - <br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - <br />
-        Notes for Customer - <br />
-      </>
-    ),
-  },
+const parts =
+  [
+    {
+      name: "Neck Ring Holder STR Assly",
+      ref: "23-1167-2",
+      img: "C:\\Project2\\Photos\\23-1167-2.jfif",
+      details: (
+        <>
+          Spare Part Name - Funnel Mechanism<br />
+          Machine Size - 6-1/4&quot; 70 mm<br />
+          Reference No - 23-1167-2<br />
+          Lead Time - 10 weeks<br />
+          Weight - <br />
+          Machine Type - <br />
+          Kit Availability - <br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - <br />
+          Notes for Customer - <br />
+        </>
+      ),
+    },
 
-  {
-    name: "Tong Holder Assembly",
-    ref: "23-1168-3",
-    img: "C:\\Project2\\Photos\\191-8319-G01_9_3 finish copy.jpg",
-    details: (
-      <>
-        Spare Part Name - Tong Holder Assembly<br />
-        Machine Size - 8&quot; 100 mm<br />
-        Reference No - 23-1168-3<br />
-        Lead Time - 8 weeks<br />
-        Weight - <br />
-        Machine Type - <br />
-        Kit Availability - <br />
-        Price - <br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - <br />
-        Notes for Customer - <br />
-      </>
-    ),
-  },
+    {
+      name: "Tong Holder Assembly",
+      ref: "23-1168-3",
+      img: "C:\\Project2\\Photos\\191-8319-G01_9_3 finish copy.jpg",
+      details: (
+        <>
+          Spare Part Name - Tong Holder Assembly<br />
+          Machine Size - 8&quot; 100 mm<br />
+          Reference No - 23-1168-3<br />
+          Lead Time - 8 weeks<br />
+          Weight - <br />
+          Machine Type - <br />
+          Kit Availability - <br />
+          Price - <br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - <br />
+          Notes for Customer - <br />
+        </>
+      ),
+    },
 
-  {
-    name: "Blank Mold Holder Arm Assembly",
-    ref: "23-1013-1",
-    img: "C:\\Project 1\\Photos\\Test5.jpg",
-    details: (
-      <>
-        Spare Part Name - Blank Mold Holder Arm Assembly<br />
-        Machine Size - <br />
-        Reference No - 23-1013-1<br />
-        Lead Time - 12 weeks<br />
-        Weight - <br />
-        Machine Type - <br />
-        Kit Availability - <br />
-        Price - <br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - <br />
-        Notes for Customer - <br />
-      </>
-    ),
-  },
+    {
+      name: "Blank Mold Holder Arm Assembly",
+      ref: "23-1013-1",
+      img: "C:\\Project 1\\Photos\\Test5.jpg",
+      details: (
+        <>
+          Spare Part Name - Blank Mold Holder Arm Assembly<br />
+          Machine Size - <br />
+          Reference No - 23-1013-1<br />
+          Lead Time - 12 weeks<br />
+          Weight - <br />
+          Machine Type - <br />
+          Kit Availability - <br />
+          Price - <br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - <br />
+          Notes for Customer - <br />
+        </>
+      ),
+    },
 
-  {
-    name: "Blow Head Arm Assembly",
-    ref: "200-202-19",
-    img: "C:\\Project2\\Photos\\image (1).jfif",
-    details: (
-      <>
-        Spare Part Name - Blow Head Arm Assembly<br />
-        Reference No - 200-202-19<br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        Weight - <br />
-        Machine Type - <br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - 10 Weeks<br />
-        Notes for Customer - <br />
-      </>
-    ),
-  },
-  
-  {
-    name: "Take out tong head Assembly",
-    ref: "191-9535-2",
-    img: "C:\\Project2\\Photos\\191-9535-2.jfif",
-    details: (
-      <>
-        Spare Part Name - Take out tong head Assembly<br />
-        Machine Size - <br />
-        Reference No -191-9535-2<br />
-        Lead Time - 9 weeks<br />
-        Weight - <br />
-        Machine Type - <br />
-        Kit Availability - <br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - <br />
-        Notes for Customer - <br />
-      </>
-    ),
-  },
+    {
+      name: "Blow Head Arm Assembly",
+      ref: "200-202-19",
+      img: "C:\\Project2\\Photos\\image (1).jfif",
+      details: (
+        <>
+          Spare Part Name - Blow Head Arm Assembly<br />
+          Reference No - 200-202-19<br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
+          Weight - <br />
+          Machine Type - <br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - 10 Weeks<br />
+          Notes for Customer - <br />
+        </>
+      ),
+    },
 
-  {
-    name: " ",
-    ref: "191-9535-2",
-    img: "C:\\Project2\\Photos\\191-9535-2.jfif",
-    details: (
-      <>
-        Spare Part Name - Take out tong head Assembly<br />
-        Machine Size - <br />
-        Reference No -191-9535-2<br />
-        Lead Time - 9 weeks<br />
-        Weight - <br />
-        Machine Type - <br />
-        Kit Availability - <br />
-        Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-        General Description - <br />
-        Reference 1 - <br />
-        Production Time - <br />
-        Notes for Customer - <br />
-      </>
-    ),
+    {
+      name: "Take out tong head Assembly",
+      ref: "191-9535-2",
+      img: "C:\\Project2\\Photos\\191-9535-2.jfif",
+      details: (
+        <>
+          Spare Part Name - Take out tong head Assembly<br />
+          Machine Size - <br />
+          Reference No -191-9535-2<br />
+          Lead Time - 9 weeks<br />
+          Weight - <br />
+          Machine Type - <br />
+          Kit Availability - <br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - <br />
+          Notes for Customer - <br />
+        </>
+      ),
+    },
 
-  }
-];
+    {
+      name: " ",
+      ref: "191-9535-2",
+      img: "C:\\Project2\\Photos\\191-9535-2.jfif",
+      details: (
+        <>
+          Spare Part Name - Take out tong head Assembly<br />
+          Machine Size - <br />
+          Reference No -191-9535-2<br />
+          Lead Time - 9 weeks<br />
+          Weight - <br />
+          Machine Type - <br />
+          Kit Availability - <br />
+          General Description - <br />
+          Reference 1 - <br />
+          Production Time - <br />
+          Notes for Customer - <br />
+        </>
+      ),
+
+    }
+  ];
 
 function sendEmail(partName, partRef) {
   const userName = window.prompt("Enter your name:");
@@ -166,8 +165,8 @@ const Assembly = () => {
   };
 
   return (
-    <div className="body text-red-800
-      md:text-amber-600 transition duration-500">
+    <div className="body text-black
+      md:text-black transition duration-500">
       <h1 className="h1 p-5  text-5xl">ASSEMBlY</h1>
       <div className="searchBox">
         <input
