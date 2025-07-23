@@ -4,14 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import Assembly from './Components/Assembly.jsx'
 import Variables from './Components/Variables.jsx'
+import Mechanism from './Components/Mechanism.jsx'
 
 createRoot(document.getElementById('root')).render(
 
-    <Assembly />
-
-)
-
-createRoot(document.getElementById('app')).render(
-    <Variables />
+    <App />
 
 )
