@@ -65,7 +65,8 @@ const styles = `
   .modal.open {
     display: block;
   }
-  .modal-content {
+  .modal-c
+  ontent {
     margin: auto;
     display: block;
     max-width: 90%;
@@ -214,7 +215,7 @@ const SpareParts = () => {
 
   return (
     <>
-      <style>{styles}</style>
+      {/* <style>{styles}</style>
       <h1>SPAREPARTS</h1>
       <div className="search-box">
         <input
@@ -287,12 +288,12 @@ const SpareParts = () => {
         ))}
       </div>
       {/* Modal for Enlarged Image */}
-      <div className={`modal${modalImg ? " open" : ""}`} onClick={() => setModalImg(null)}>
+      {/* <div className={`modal${modalImg ? " open" : ""}`} onClick={() => setModalImg(null)}>
         <span className="close" onClick={() => setModalImg(null)}>
           &times;
         </span>
         <img className="modal-content" src={modalImg || ""} alt="" />
-      </div>
+      </div> */} 
     </>
   );
 };
