@@ -1,223 +1,343 @@
-// Variables component
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const variablesData = [
-  {
-    name: "Funnel Arm",
-    ref: "23-1167-2",
-    img: "C:/Project2/Photos/Funnel Arm.jpg",
-    leadTime: "10 weeks",
-    emailSubject: "Request for Funnel Arm(23-1167-2)",
-    emailBody:
-      "Dear Sales Team,%0D%0A%0D%0AI am interested in the Funnel Arm (23-1167-2). Could you please provide details on the following:%0D%0A%0D%0A Spares-[ ]%0D%0A Assembly-[ ]%0D%0A  Variables-[ ]%0D%0A Mechanism- [ ]%0D%0A%0D%0AAdditionally, could you provide information on the specifications, pricing, and availability?%0D%0A%0D%0AThanks!%0D%0A%0D%0ABest Regards,%0D%0A[Your Full Name]",
-  },
-  {
-    name: "Variable Name",
-    ref: "23-XXXX-X",
-    img: "C:/path/to/image.jpg",
-    leadTime: "8 weeks",
-    emailSubject: "Request for Variable Name (23-)",
-    emailBody:
-      "Dear Sales Team,%0D%0A%0D%0AI am interested in the  Variable Name(23-). Could you please provide details on the following:%0D%0A%0D%0A Spares-[ ]%0D%0A Assembly-[ ]%0D%0A  Variables-[ ]%0D%0A Mechanism- [ ]%0D%0A%0D%0AAdditionally, could you provide information on the specifications, pricing, and availability?%0D%0A%0D%0AThanks!%0D%0A%0D%0ABest Regards,%0D%0A[Your Full Name]",
-  },
-];
-
-function Variables() {
+const Assembly = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
-  const [descOpen, setDescOpen] = useState({});
-  const [compareVisible, setCompareVisible] = useState(false);
-  const [catalogue, setCatalogue] = useState(null);
-  const [userPart, setUserPart] = useState({
-    name: "",
-    ref: "",
-    img: "",
-  });
+  const [showDesc, setShowDesc] = useState({});
+  const [selectedParts, setSelectedParts] = useState([]);
+  const [showComparison, setShowComparison] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
+  const [userName, setUserName] = useState(""); // Corrected line
 
-  const filtered = variablesData.filter(
-    (v) =>
-      v.name.toLowerCase().includes(search.toLowerCase()) ||
-      v.ref.toLowerCase().includes(search.toLowerCase())
+  const parts = [
+    {
+      name: "Neck Ring Holder STR Assly",
+      ref: "23-1167-2",
+      img: "https://placehold.co/400x300",
+      alt: "Neck ring holder assembly for machinery",
+      details: {
+        "Spare Part Name": "Neck Ring Holder STR Assly",
+        "Reference No": "23-1167-2",
+        "Availability": "N/A",
+        "Unit": "N/A",
+        "Weight": "N/A",
+        "Lead Time": "8 weeks",
+        "Assembly Reference 1": "N/A",
+        "Machine Center Distance": "N/A",
+        "Machine Type": "STR",
+        "Kit Availability": "N/A",
+        "Machine Size": "8\" 100 mm",
+        "General Description": "N/A",
+        "Notes for Customer": "N/A"
+      }
+    },
+    {
+      name: "Gear Assembly 3\"",
+      ref: "23-1168-3",
+      img: "https://placehold.co/400x300",
+      alt: "Gear assembly for machinery",
+      details: {
+        "Spare Part Name": "Gear Assembly",
+        "Reference No": "23-1168-3",
+        "Availability": "In Stock",
+        "Unit": "Each",
+        "Weight": "2 kg",
+        "Lead Time": "2 weeks",
+        "Assembly Reference 1": "N/A",
+        "Machine Center Distance": "N/A",
+        "Machine Type": "STR",
+        "Kit Availability": "Available",
+        "Machine Size": "3\" 75 mm",
+        "General Description": "High-quality gear assembly.",
+        "Notes for Customer": "Check compatibility."
+      }
+    },
+    // Add more parts as needed...
+  ];
+
+  const filteredParts = parts.filter(part =>
+    part.name.toLowerCase().includes(search.toLowerCase()) ||
+    part.ref.toLowerCase().includes(search.toLowerCase())
   );
 
-  React.useEffect(() => {
-    if (filtered.length > 0 && search) {
-      setCatalogue(filtered[0]);
-      setCompareVisible(true);
-    } else {
-      setCompareVisible(false);
-    }
-  }, [search]);
-
-  const handleDescToggle = (idx) => {
-    setDescOpen((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  const handleShowDesc = (idx) => {
+    setShowDesc(prev => ({
+      ...prev,
+      [idx]: !prev[idx]
+    }));
   };
 
+  const addToCart = (part) => {
+    const existingPart = cart.find(p => p.ref === part.ref);
+    if (existingPart) {
+      // Increase quantity if already in cart
+      setCart(prev => prev.map(p =>
+        p.ref === part.ref ? { ...p, quantity: p.quantity + 1 } : p
+      ));
+    } else {
+      // Add new part to cart with quantity 1
+      setCart(prev => [...prev, { ...part, quantity: 1 }]);
+    }
+  };
+
+  const removeFromCart = (ref) => {
+    setCart(prev => prev.filter(part => part.ref !== ref));
+  };
+
+  const updateQuantity = (ref, quantity) => {
+    if (quantity < 1) return; // Prevent negative quantities
+    setCart(prev => prev.map(part =>
+      part.ref === ref ? { ...part, quantity } : part
+    ));
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      if (showComparison) {
+        setShowComparison(false);
+      }
+      if (showCart) {
+        setShowCart(false);
+      }
+      if (modalImg) {
+        setModalImg(null);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showComparison, showCart, modalImg]);
+
+  const renderComparisonModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg w-full max-w-3xl p-4 overflow-auto max-h-[80vh]">
+        <h2 className="text-xl font-bold mb-4">Compare Parts</h2>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border">
+            <thead>
+              <tr>
+                <th className="border p-2">Feature</th>
+                {selectedParts.map(part => (
+                  <th key={part.ref} className="border p-2 text-center">
+                    <img
+                      src={part.img}
+                      alt={part.alt}
+                      className="h-20 mx-auto mb-2"
+                      onClick={() => setModalImg(part.img)}
+                    />
+                    <div className="font-semibold">{part.name}</div>
+                    <div className="text-sm text-gray-600">{part.ref}</div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(parts[0].details).map(key => (
+                <tr key={key}>
+                  <td className="border p-2 font-medium">{key}</td>
+                  {selectedParts.map(part => (
+                    <td key={`${part.ref}-${key}`} className="border p-2 text-center">
+                      {part.details[key] || "N/A"}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <button
+          onClick={() => setShowComparison(false)}
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Close Comparison
+        </button>
+      </div>
+    </div>
+  );
+
+  const renderCartModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg w-full max-w-3xl p-4 overflow-auto max-h-[80vh]">
+        <h2 className="text-xl font-bold mb-4">Your Cart</h2>
+        <div className="overflow-x-auto">
+          <table className="min-w-full border">
+            <thead>
+              <tr>
+                <th className="border p-2">Part Name</th>
+                <th className="border p-2">Reference No</th>
+                <th className="border p-2">Quantity</th>
+                <th className="border p-2">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((part, index) => (
+                <tr key={index}>
+                  <td className="border p-2">{part.name}</td>
+                  <td className="border p-2">{part.ref}</td>
+                  <td className="border p-2">
+                    <input
+                      type="number"
+                      value={part.quantity}
+                      min="1"
+                      onChange={(e) => updateQuantity(part.ref, parseInt(e.target.value))}
+                      className="w-16 text-center border rounded"
+                    />
+                  </td>
+                  <td className="border p-2 text-center">
+                    <button
+                      onClick={() => removeFromCart(part.ref)}
+                      className="text-red-600 hover:text-red-800"
+                    >
+                      Remove
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4">
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)} // Corrected line
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          />
+          <button
+            onClick={() => {
+              // Prepare email details
+              const partDetails = cart.map(part => `${part.name} (${part.ref})`).join(", ");
+              const emailBody = `Dear Sales Team,%0D%0A%0D%0AI am interested in the ${partDetails}. Could you please provide details on the following:%0D%0A%0D%0A Spares-%0D%0A Quantity-[ ]%0D%0A Additionally, could you please provide a Quotation for ${partDetails}?%0D%0A%0D%0AThanks!%0D%0A%0D%0ABest Regards,%0D%0A${encodeURIComponent(userName)}`;
+              const mailtoLink = `mailto:company@example.com?subject=New Order from ${userName}&body=${emailBody}`;
+              window.location.href = mailtoLink; // Open email client
+              setCart([]); // Clear cart after order
+              setUserName(""); // Clear user name
+              setShowCart(false); // Close cart modal
+            }}
+            className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          >
+            Place Order
+          </button>
+        </div>
+        <button
+          onClick={() => setShowCart(false)}
+          className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Close Cart
+        </button>
+      </div>
+    </div>
+  );
+
   return (
-    <div>
-      <style>{styles}</style>
-      <h1>VARIABLES</h1>
-      <div className="search-box">
+    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">ASSEMBLY PARTS</h1>
+
+      <div className="max-w-3xl mx-auto mb-8">
         <input
           type="text"
           placeholder="Search by name or reference number"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          style={{
-            width: "40%",
-            padding: "12px",
-            fontSize: "16px",
-            borderRadius: "8px",
-            border: "1px solid #ccc",
-          }}
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         />
       </div>
-      <div className="container" id="productContainer">
-        {variablesData.map((v, idx) => (
-          <div className="block" data-name={v.name} data-ref={v.ref} key={v.ref}>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filteredParts.map((part, idx) => (
+          <div key={part.ref} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
             <img
-              src={v.img}
-              alt={v.name}
-              onClick={() => setModalImg(v.img)}
-              style={{ maxWidth: "60%", marginTop: 30, cursor: "pointer" }}
+              src={part.img}
+              alt={part.alt}
+              className="w-full h-48 object-contain cursor-pointer"
+              onClick={() => setModalImg(part.img)}
             />
-            <div>
-              {v.name}
-              <br />
-              Reference No - {v.ref}
-            </div>
-            <div className="description-item">
-              <strong>
-                <a
-                  href="#"
+            <div className="p-4">
+              <h3 className="text-lg font-semibold text-gray-900">{part.name}</h3>
+              <p className="text-gray-600 mb-2">Ref: {part.ref}</p>
+
+              <div className="flex justify-between items-center mb-2">
+                <button
                   onClick={(e) => {
                     e.preventDefault();
-                    handleDescToggle(idx);
+                    handleShowDesc(idx);
                   }}
+                  className="text-blue-600 hover:text-blue-800 font-medium"
                 >
-                  View Details
-                </a>
-              </strong>
-              <div
-                className="full-description"
-                style={{
-                  display: descOpen[idx] ? "block" : "none",
-                }}
-              >
-                Assembly Name - {v.name}
-                <br />
-                Machine Size - <br />
-                Reference No - {v.ref}
-                <br />
-                Lead Time - {v.leadTime}
-                <br />
-                Weight - <br />
-                Machine Type - <br />
-                Kit Availability - <br />
-                Price - <br />
-                Availability -{" "}
-                <input
-                  type="number"
-                  min="1"
-                  max="100"
-                  placeholder="1-100"
-                  style={{ width: 60 }}
-                />
-                <br />
-                General Description - <br />
-                Reference 1 - <br />
-                Production Time - <br />
-                Notes for Customer - <br />
-                <a
-                  href={`mailto:sales.l01gen@verallia.com?subject=${v.emailSubject}&body=${v.emailBody}`}
+                  {showDesc[idx] ? 'Hide Details' : 'View Details'}
+                </button>
+
+                <button
+                  onClick={() => {
+                    addToCart(part);
+                  }}
+                  className="px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
                 >
-                  Request via Email
-                </a>
+                  Add to Cart
+                </button>
               </div>
+
+              {showDesc[idx] && (
+                <div className="mt-4">
+                  <div className="text-sm space-y-2">
+                    {Object.entries(part.details).map(([key, value]) => (
+                      <div key={key} className="flex">
+                        <span className="font-medium w-40">{key}:</span>
+                        <span className="flex-1">{value || '-'}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
-      {compareVisible && catalogue && (
-        <div id="compareSection" style={{ display: "block" }}>
-          <h2>Compare Spare Parts</h2>
-          <div className="compare-box">
-            <div className="compare-item">
-              <h3>Catalogue Part</h3>
-              <div id="catalogueName">{catalogue.name}</div>
-              <div id="catalogueRef">{catalogue.ref}</div>
-              <img id="catalogueImage" src={catalogue.img} alt={catalogue.name} />
-            </div>
-            <div className="compare-item">
-              <h3>Your Part</h3>
-              <div id="userName">{userPart.name}</div>
-              <div id="userRef">{userPart.ref}</div>
-              {userPart.img && (
-                <img id="userImage" src={userPart.img} alt={userPart.name} />
-              )}
-            </div>
-          </div>
-          <div className="compare-inputs">
-            <input
-              type="text"
-              id="userPartName"
-              placeholder="Your Part Name"
-              value={userPart.name}
-              onChange={(e) =>
-                setUserPart((p) => ({ ...p, name: e.target.value }))
-              }
-            />
-            <input
-              type="text"
-              id="userPartRef"
-              placeholder="Your Reference No"
-              value={userPart.ref}
-              onChange={(e) =>
-                setUserPart((p) => ({ ...p, ref: e.target.value }))
-              }
-            />
-            <input
-              type="text"
-              id="userPartImage"
-              placeholder="Image URL"
-              value={userPart.img}
-              onChange={(e) =>
-                setUserPart((p) => ({ ...p, img: e.target.value }))
-              }
-            />
-            <button
-              onClick={() => {
-                // Just scroll into view, handled by React state
-                document
-                  .getElementById("compareSection")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              Compare
-            </button>
-          </div>
-        </div>
-      )}
+
       {modalImg && (
-        <div
-          className="modal"
-          style={{ display: "block" }}
-          onClick={() => setModalImg(null)}
-        >
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
           <span
-            className="close"
-            onClick={(e) => {
-              e.stopPropagation();
-              setModalImg(null);
-            }}
+            className="absolute top-4 right-6 text-white text-4xl cursor-pointer"
+            onClick={() => setModalImg(null)}
           >
             &times;
           </span>
-          <img className="modal-content" id="modalImage" src={modalImg} alt="" />
+          <img
+            src={modalImg}
+            alt="Enlarged view"
+            className="max-w-full max-h-full"
+          />
         </div>
       )}
+
+      {selectedParts.length > 0 && (
+        <button
+          onClick={() => setShowComparison(true)}
+          className={`fixed bottom-4 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-blue-600 hover:bg-blue-700`}
+        >
+          Compare ({selectedParts.length})
+        </button>
+      )}
+
+      {cart.length > 0 && (
+        <button
+          onClick={() => setShowCart(true)}
+          className="fixed bottom-16 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-green-600 hover:bg-green-700"
+        >
+          View Cart ({cart.length})
+        </button>
+      )}
+
+      {showComparison && renderComparisonModal()}
+      {showCart && renderCartModal()}
     </div>
   );
-}
+};
 
-export default Variables;
+export default Assembly;
