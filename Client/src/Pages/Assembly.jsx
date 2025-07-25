@@ -89,8 +89,8 @@ const Assembly = () => {
                 <button
                   onClick={() => togglePartSelection(part)}
                   className={`text-xs px-2 py-1 rounded ${selectedParts.some(p => p.ref === part.ref)
-                      ? "bg-red-100 text-red-700"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    ? "bg-red-100 text-red-700"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                 >
                   {selectedParts.some(p => p.ref === part.ref) ? "✓ Selected" : "Compare +"}
