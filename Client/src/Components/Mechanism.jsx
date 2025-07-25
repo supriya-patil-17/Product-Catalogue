@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Assembly = () => {
+const MECHANISM = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
@@ -17,7 +17,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Baffle Mechanism 5 1/2\"",
       details: {
-        "Spare Part Name": "Baffle Mechanism 5 1/2\"",
+        "Mechanism Name": "Baffle Mechanism 5 1/2\"",
         "Reference No": "210-146-1",
         "Availability": "N/A",
         "Unit": "N/A",
@@ -38,7 +38,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Baffle Mechanism 4 1/4 5\"",
       details: {
-        "Spare Part Name": "Baffle Mechanism 4 1/4 5\"",
+        "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
         "Reference No": "200-248-3",
         "Availability": "In Stock",
         "Unit": "Each",
@@ -59,7 +59,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Baffle Mechanism 4 1/4\", 5\"",
       details: {
-        "Spare Part Name ": "Baffle Mechanism 4 1/4\", 5\"",
+        "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
         "Reference No": " 200-248-4",
         "Availability": "N/A",
         "Price": "N/A",
@@ -81,7 +81,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Funnel Mechanism 4-1/4\", 5\"",
       details: {
-        "Spare Part Name ": "Funnel Mechanism 4-1/4\", 5\"",
+        "Mechanism Name": "Funnel Mechanism 4-1/4\", 5\"",
         "Reference No": " 200-247-1",
         "Availability": "N/A",
         "Price": "N/A",
@@ -104,7 +104,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Funnel Mechanism 5 1/2\", 6 1/4\"",
       details: {
-        "Spare Part Name ": "Funnel Mechanism 5 1/2\", 6 1/4\"",
+        "Mechanism Name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
         "Reference No": "23-13-3",
         "Availability": "N/A",
         "Price": "N/A",
@@ -127,7 +127,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Funnel Mechanism 5 1/2\", 6 1/4\"",
       details: {
-        "Spare Part Name ": "Funnel Mechanism 5 1/2\", 6 1/4\"",
+        "Mechanism Name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
         "Reference No": "23-13-3",
         "Availability": "N/A",
         "Price": "N/A",
@@ -149,7 +149,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Blow head Mechanism 4 1/4, 5\"",
       details: {
-        "Spare Part Name ": "Blow head Mechanism 4 1/4, 5\"",
+        "Mechanism Name": "Blow head Mechanism 4 1/4, 5\"",
         "Reference No": " 200-249-4",
         "Availability": "N/A",
         "Price": "N/A",
@@ -172,7 +172,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Blow head Mechanism 4 1/4, 5\"",
       details: {
-        "Spare Part Name ": "Blow head Mechanism 4 1/4, 5\"",
+        "Mechanism Name": "Blow head Mechanism 4 1/4, 5\"",
         "Reference No": " 200-249-5",
         "Availability": "N/A",
         "Price": "N/A",
@@ -194,7 +194,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Blow head Mechanism 41 /4”, 5”",
       details: {
-        "Spare Part Name ": "Blow head Mechanism 41 /4”, 5”",
+        "Mechanism Name": "Blow head Mechanism 41 /4”, 5”",
         "Reference No": " 200-249-2",
         "Availability": "N/A",
         "Price": "N/A",
@@ -217,7 +217,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Blow head Mechanism 5",
       details: {
-        "Spare Part Name ": "Blow head Mechanism 5",
+        "Mechanism Name": "Blow head Mechanism 5",
         "Reference No": " 200-249-1",
         "Availability": "N/A",
         "Price": "N/A",
@@ -239,7 +239,7 @@ const Assembly = () => {
       img: "https://placehold.co/400x300",
       alt: "Blow Head Mechanism 5 1/2, 6 1/4\"",
       details: {
-        "Spare Part Name ": "Blow Head Mechanism 5 1/2, 6 1/4\"",
+        "Mechanism Name": "Blow Head Mechanism 5 1/2, 6 1/4\"",
         "Reference No": " 210-210-4",
         "Availability": "N/A",
         "Price": "N/A",
@@ -941,4 +941,4 @@ const Assembly = () => {
   );
 };
 
-export default Assembly;
+export default MECHANISM;
