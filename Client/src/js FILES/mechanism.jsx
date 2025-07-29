@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MECHANISM = () => {
+const MECHANISMS = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
@@ -709,7 +709,7 @@ const MECHANISM = () => {
   const renderComparisonModal = () => (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
       <div className="bg-white rounded-lg w-full max-w-3xl p-4 overflow-auto max-h-[80vh]">
-        <h2 className="text-xl font-bold mb-4">Compare Parts</h2>
+        <h2 className="text-xl font-bold mb-4">Compared Parts</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border">
             <thead>
@@ -838,7 +838,7 @@ const MECHANISM = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">ASSEMBLY PARTS</h1>
+      <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">MECHANISMS</h1>
 
       <div className="max-w-3xl mx-auto mb-8">
         <input
@@ -929,7 +929,7 @@ const MECHANISM = () => {
       {cart.length > 0 && (
         <button
           onClick={() => setShowCart(true)}
-          className="fixed bottom-16 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-green-600 hover:bg-green-700"
+          className={`fixed bottom-16 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-blue-600 hover:bg-blue-700`}
         >
           View Cart ({cart.length})
         </button>
@@ -941,4 +941,4 @@ const MECHANISM = () => {
   );
 };
 
-export default Assembly;
+export default MECHANISMS;
