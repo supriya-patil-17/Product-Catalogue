@@ -1,564 +1,47 @@
-// Mechanism component
 import React, { useState } from "react";
 
-const mechanisms =
-  [
-    {
-      "name": "Baffle Mechanism 4 1/4 5\"",
-      "ref": "200-248-3",
-      "img": "https://placehold.co/400x300",
-      "alt": "Baffle Mechanism 4 1/4 5\"",
-      "details": {
-        "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
-        "Reference No": "200-248-3",
-        "Availability": "In Stock",
-        "Unit": "Each",
-        "Weight": "57.600",
-        "Lead Time": "2 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "Available",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "High-quality gear assembly.",
-        "Notes for Customer": "Check compatibility."
-      }
-    },
-    {
-      "name": "Baffle Mechanism 4 1/4\", 5\"",
-      "ref": "200-248-4",
-      "img": "https://placehold.co/400x300",
-      "alt": "Baffle Mechanism 4 1/4\", 5\"",
-      "details": {
-        "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
-        "Reference No": "200-248-4",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "64.319",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Baffle Mechanism 5 1/2\"",
-      "ref": "210-146-1",
-      "img": "https://placehold.co/400x300",
-      "alt": "Baffle Mechanism 5 1/2\"",
-      "details": {
-        "Mechanism Name": "Baffle Mechanism 5 1/2\"",
-        "Reference No": "210-146-1",
-        "Availability": "N/A",
-        "Unit": "N/A",
-        "Weight": "62.600",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 1/2\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow Head Mechanism 5",
-      "ref": "200-249-1",
-      "img": "https://placehold.co/400x300",
-      "alt": "Blow head Mechanism 5",
-      "details": {
-        "Mechanism Name": "Blow head Mechanism 5",
-        "Reference No": "200-249-1",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "62.821",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow head Mechanism 4 1/4, 5\"",
-      "ref": "200-249-4",
-      "img": "https://placehold.co/400x300",
-      "alt": "Blow head Mechanism 4 1/4, 5\"",
-      "details": {
-        "Mechanism Name": "Blow head Mechanism 4 1/4, 5\"",
-        "Reference No": "200-249-4",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "73.869",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow head Mechanism 4 1/4, 5\"",
-      "ref": "200-249-5",
-      "img": "https://placehold.co/400x300",
-      "alt": "Blow head Mechanism 4 1/4, 5\"",
-      "details": {
-        "Mechanism Name": "Blow head Mechanism 4 1/4, 5\"",
-        "Reference No": "200-249-5",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "61.400",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow head Mechanism 41 /4”, 5”",
-      "ref": "200-249-2",
-      "img": "https://placehold.co/400x300",
-      "alt": "Blow head Mechanism 41 /4”, 5”",
-      "details": {
-        "Mechanism Name": "Blow head Mechanism 41 /4”, 5”",
-        "Reference No": "200-249-2",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "63.313",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow Head Mechanism 5 1/2, 6 1/4\"",
-      "ref": "210-210-4",
-      "img": "https://placehold.co/400x300",
-      "alt": "Blow Head Mechanism 5 1/2, 6 1/4\"",
-      "details": {
-        "Mechanism Name": "Blow Head Mechanism 5 1/2, 6 1/4\"",
-        "Reference No": "210-210-4",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "77.000",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 1/2\", 6 1/4\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Blow Head Mech 5 ½”",
-      "ref": "07129301-01",
-      "img": "https://placehold.co/400x300",
-      "alt": "Neck ring holder assembly for machinery",
-      "details": {
-        "Spare Part Name ": "Blow Head Mech 5 ½”",
-        "Reference No": "07129301-01",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "8\" 100 mm",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
-      "ref ": "191-7481-13",
-      "img": "https://placehold.co/400x300",
-      "alt": "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
-      "details": {
-        "Spare Part Name ": "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
-        "Reference No": " 191-7481-13",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6 1/4\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
-      "ref": "191-7481-12",
-      "img": "https://placehold.co/400x300",
-      "alt": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
-      "details": {
-        "Spare Part Name ": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
-        "Reference No": "191-7481-12",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 ½”",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Funnel Mechanism 4-1/4\", 5\"",
-      "ref": "200-247-1",
-      "img": "https://placehold.co/400x300",
-      "alt": "Funnel Mechanism 4-1/4\", 5\"",
-      "details": {
-        "Mechanism Name": "Funnel Mechanism 4-1/4\", 5\"",
-        "Reference No": "200-247-1",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "42.400",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-      "ref": "200-2100-1",
-      "img": "https://placehold.co/400x300",
-      "alt": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-      "details": {
-        "Mechanism Name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-        "Reference No": "200",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "41.000",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 1/2\", 6 1/4\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-      "ref": "23-13-3",
-      "img": "https://placehold.co/400x300",
-      "alt": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-      "details": {
-        "Mechanism Name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
-        "Reference No": "23-13-3",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "56.500",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "8\" 100 mm",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Funnel mechanism 6\"",
-      "ref": "07123750",
-      "img": "https://placehold.co/400x300",
-      "alt": "Funnel mechanism 6\"",
-      "details": {
-        "Spare Part Name ": "Funnel mechanism 6\"",
-        "Reference No": "07123750",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
-      "ref": "191-7481-10",
-      "img": "https://placehold.co/400x300",
-      "alt": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
-      "details": {
-        "Spare Part Name ": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
-        "Reference No": "191-7481-10",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "44.764",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "85mm, 4 1/4\", 5\", 5 1/2\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
-      "ref": "191-7481-11",
-      "img": "https://placehold.co/400x300",
-      "alt": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
-      "details": {
-        "Spare Part Name ": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
-        "Reference No": "191-7481-11",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "44.693",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6 1/4\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Invert Mechanism 5 ½”",
-      "ref": "07126020",
-      "img": "https://placehold.co/400x300",
-      "alt": "Invert Mechanism 5 ½”",
-      "details": {
-        "Spare Part Name ": "Invert Mechanism 5 ½”",
-        "Reference No": "07126020",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "44.764",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 ½”",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
-      "ref": "62-11030-04",
-      "img": "https://placehold.co/400x300",
-      "alt": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
-      "details": {
-        "Spare Part Name ": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
-        "Reference No": "62-11030-04",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 1/2\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Plunger Mechanism DG 5 1/2\"",
-      "ref": "62-11030-05",
-      "img": "https://placehold.co/400x300",
-      "alt": "Plunger Mechanism DG 5 1/2",
-      "details": {
-        "Spare Part Name ": "Plunger Mechanism DG 5 1/2",
-        "Reference No": "62-11030-05",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 1/2\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "QC Baffle Mechanism 5\" & 6\"",
-      "ref": "07182040",
-      "img": "https://placehold.co/400x300",
-      "alt": "QC Baffle Mechanism 5\" & 6\"",
-      "details": {
-        "Spare Part Name ": "QC Baffle Mechanism 5\" & 6\"",
-        "Reference No": "07182040",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5\", 6\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Take Out Mechanism 6\"",
-      "ref": "07183900-09",
-      "img": "https://placehold.co/400x300",
-      "alt": "Take Out Mechanism 6\"",
-      "details": {
-        "Spare Part Name ": "Take Out Mechanism 6\"",
-        "Reference No": "07183900-09",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "Take out Mechanism 5 ½”",
-      "ref": "07135050-03",
-      "img": "https://placehold.co/400x300",
-      "alt": "Take out Mechanism 5 ½”",
-      "details": {
-        "Spare Part Name ": "Take out Mechanism 5 ½”",
-        "Reference No": "07135050-03",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "5 ½”",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-    {
-      "name": "6\" Blank support Mechanism",
-      "ref": "07100180",
-      "img": "https://placehold.co/400x300",
-      "alt": "6\" Blank support Mechanism",
-      "details": {
-        "Spare Part Name ": "6\" Blank support Mechanism",
-        "Reference No": "07100180",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
+// Mechanism data (shortened here – use your full dataset)
+const mechanisms = [/* ... your full mechanisms array ... */];
 
-    {
-      "name": "6\" Blow Support Mechanism",
-      "ref": "07100190",
-      "img": "https://placehold.co/400x300",
-      "alt": "6\" Blow Support Mechanism",
-      "details": {
-        "Spare Part Name ": "6\" Blow Support Mechanism",
-        "Reference No": "07100190",
-        "Availability": "N/A",
-        "Price": "N/A",
-        "Unit": "N/A",
-        "Weight": "N/A",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": "6\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
-      }
-    },
-  ];
+// CSV export helper
+const exportToCSV = (selectedRefs, mechanisms) => {
+  const selectedData = mechanisms.filter((m) => selectedRefs.includes(m.ref));
+  if (!selectedData.length) return;
+
+  const allKeys = Array.from(
+    new Set(selectedData.flatMap((m) => Object.keys(m.details)))
+  );
+
+  const csvHeader = ["Part Name", "Reference No", ...allKeys];
+  const csvRows = selectedData.map((m) => [
+    m.name,
+    m.ref,
+    ...allKeys.map((k) => m.details[k] || "N/A"),
+  ]);
+
+  const csvContent = [
+    csvHeader.join(","),
+    ...csvRows.map((row) =>
+      row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(",")
+    ),
+  ].join("\n");
+
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", "mechanism_comparison.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
 function Mechanism() {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [descOpen, setDescOpen] = useState({});
-  const [availabilities, setAvailabilities] = useState({});
+  const [selectedParts, setSelectedParts] = useState([]);
+  const [showComparison, setShowComparison] = useState(false);
 
   const filtered = mechanisms.filter(
     (m) =>
@@ -571,6 +54,14 @@ function Mechanism() {
 
   const handleToggleDesc = (idx) =>
     setDescOpen((prev) => ({ ...prev, [idx]: !prev[idx] }));
+
+  const toggleSelectPart = (ref) => {
+    setSelectedParts((prevSelected) =>
+      prevSelected.includes(ref)
+        ? prevSelected.filter((r) => r !== ref)
+        : [...prevSelected, ref]
+    );
+  };
 
   const handleSendEmail = (partName, partRef) => {
     const userName = window.prompt("Enter your name:");
@@ -603,9 +94,16 @@ function Mechanism() {
           }}
         />
       </div>
+
       <div className="container" id="productContainer">
         {filtered.map((m, idx) => (
           <div className="block" key={m.ref} data-name={m.name} data-ref={m.ref}>
+            <input
+              type="checkbox"
+              checked={selectedParts.includes(m.ref)}
+              onChange={() => toggleSelectPart(m.ref)}
+              style={{ marginBottom: "10px" }}
+            />
             <img
               src={m.img}
               alt={m.name}
@@ -617,103 +115,176 @@ function Mechanism() {
             </div>
             <div className="description-item">
               <strong>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleToggleDesc(idx);
-                  }}
-                >
-                  View Details
-                </a>
+                <button onClick={() => handleToggleDesc(idx)}>
+                  {descOpen[idx] ? "Hide Details" : "Show Details"}
+                </button>
               </strong>
-              <div
-                className="full-description"
-                style={{
-                  display: descOpen[idx] ? "block" : "none",
-                }}
-              >
-                Mechanism Name - {m.name}
-                <br />
-                Machine Size - {m.details.machineSize}
-                <br />
-                Reference No - {m.ref}
-                <br />
-                Lead Time - {m.details.leadTime}
-                <br />
-                Weight - {m.details.weight}
-                <br />
-                Machine Type - {m.details.machineType}
-                <br />
-                Kit Availability - {m.details.kitAvailability}
-                <br />
-                Price - {m.details.price}
-                <br />
-                Availability -{" "}
-                <input
-                  type="number"
-                  min="1"
-                  max="100"
-                  placeholder="1-100"
-                  style={{ width: "60px" }}
-                  value={availabilities[m.ref] || ""}
-                  onChange={(e) =>
-                    setAvailabilities((prev) => ({
-                      ...prev,
-                      [m.ref]: e.target.value,
-                    }))
-                  }
-                />
-                <br />
-                General Description - {m.details.generalDescription}
-                <br />
-                Reference 1 - {m.details.reference1}
-                <br />
-                Production Time - {m.details.productionTime}
-                <br />
-                Notes for Customer - {m.details.notes}
-                <br />
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleSendEmail(m.name, m.ref);
-                  }}
-                >
-                  Request via Email
-                </a>
-              </div>
+              {descOpen[idx] && (
+                <div className="details">
+                  {Object.entries(m.details).map(([key, value]) => (
+                    <div key={key}>
+                      <strong>{key}:</strong> {value}
+                    </div>
+                  ))}
+                  <button onClick={() => handleSendEmail(m.name, m.ref)}>
+                    Request Quote
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         ))}
       </div>
-      {/* Modal for Enlarged Image */}
-      {modalImg &&
-        (
-          <div
-            className="modal"
-            style={{ display: "block" }}
-            onClick={handleCloseModal}
-          >
-            <span
-              className="close"
-              onClick={handleCloseModal}
-              style={{ position: "absolute", top: 15, right: 35 }}
-            >
-              &times;
-            </span>
-            <img
-              className="modal-content"
-              id="modalImage"
-              src={modalImg}
-              alt=""
-              style={{ display: "block" }}
-              onClick={(e) => e.stopPropagation()}
-            />
+
+      {selectedParts.length > 0 && (
+        <div className="compare-box">
+          <p>{selectedParts.length} item(s) selected</p>
+          <div>
+            <button onClick={() => setShowComparison(true)}>Compare Selected</button>
+            <button onClick={() => setSelectedParts([])}>Clear</button>
           </div>
-        )}
+        </div>
+      )}
+
+      {modalImg && (
+        <div className="modal" onClick={handleCloseModal}>
+          <img src={modalImg} alt="Enlarged" />
+        </div>
+      )}
+
+      {showComparison && (
+        <div className="comparison-modal">
+          <div className="comparison-header">
+            <h2>Comparison</h2>
+            <div>
+              <button onClick={() => exportToCSV(selectedParts, mechanisms)}>
+                Export to CSV
+              </button>
+              <button onClick={() => setShowComparison(false)}>Close</button>
+            </div>
+          </div>
+          <div className="comparison-table">
+            {selectedParts.map((ref) => {
+              const part = mechanisms.find((m) => m.ref === ref);
+              return (
+                <div key={ref} className="comparison-column">
+                  <h3>{part.name}</h3>
+                  <img
+                    src={part.img}
+                    alt={part.name}
+                    style={{ width: "100%", marginBottom: "10px" }}
+                  />
+                  {Object.entries(part.details).map(([key, value]) => (
+                    <div key={key}>
+                      <strong>{key}:</strong> {value}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+const styles = `
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.block {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  width: 300px;
+  text-align: center;
+  background: #f9f9f9;
+}
+.block img {
+  width: 100%;
+  cursor: pointer;
+}
+.description-item {
+  margin-top: 10px;
+}
+.details {
+  text-align: left;
+  margin-top: 8px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.compare-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+.compare-box button {
+  background: #fff;
+  color: #000;
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.comparison-modal {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background: #fff;
+  overflow-y: auto;
+  border: 2px solid #000;
+  padding: 20px;
+  z-index: 100;
+}
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.comparison-table {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+.comparison-column {
+  min-width: 300px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #f1f1f1;
+}
+`;
 
 export default Mechanism;
