@@ -19,7 +19,7 @@ const MECHANISM = () => {
       "details": {
         "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
         "Reference No": "200-248-3",
-        "Unit": "Each",
+        "UOM": "EA",
         "Weight": "57.600",
         "Lead Time": "10 weeks",
         "Assembly Reference 1": "N/A",

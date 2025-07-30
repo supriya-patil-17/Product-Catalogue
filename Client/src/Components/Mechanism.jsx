@@ -19,17 +19,16 @@ const MECHANISM = () => {
       "details": {
         "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
         "Reference No": "200-248-3",
-        "Availability": "In Stock",
-        "Unit": "Each",
+        "UOM Weight": "Kg",
         "Weight": "57.600",
         "Lead Time": "2 weeks",
-        "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "Available",
+        "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
+        "Kit Availability": "200-248-3K, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
         "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "High-quality gear assembly.",
-        "Notes for Customer": "Check compatibility."
+        "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+        "Notes for Customer": "N/A",
+        "Availability": " N/A",
       }
     },
 
@@ -41,18 +40,17 @@ const MECHANISM = () => {
       "details": {
         "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
         "Reference No": "200-248-4",
-        "Availability": "N/A",
         "Price": "N/A",
-        "Unit": "N/A",
+        "UOM Weight": "Kg",
         "Weight": "64.319",
         "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
+        "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
+        "Kit Availability": "200-248-4KB, 200-248-4KC",
         "Machine Size": "85mm, 4 1/4\", 5\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
+        "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+        "Notes for Customer": "N/A",
+        "Availability": "N/A",
       }
     },
 
@@ -64,17 +62,16 @@ const MECHANISM = () => {
       "details": {
         "Mechanism Name": "Baffle Mechanism 5 1/2\"",
         "Reference No": "210-146-1",
-        "Availability": "N/A",
-        "Unit": "N/A",
+        "UOM Weight": "Kg",
         "Weight": "62.600",
         "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
+        "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
+        "Kit Availability": "210-146-1KB, 210-146-1KC, 210-146-1KD",
         "Machine Size": "5 1/2\"",
-        "General Description": "N/A",
-        "Notes for Customer": "N/A"
+        "General Description": "BAFFLE MECH. EF 5 1/2\"",
+        "Notes for Customer": "N/A",
+        "Availability": "N/A",
       }
     },
 
@@ -86,18 +83,16 @@ const MECHANISM = () => {
       "details": {
         "Mechanism Name": "Blow head Mechanism 5",
         "Reference No": "200-249-1",
-        "Availability": "N/A",
         "Price": "N/A",
-        "Unit": "N/A",
+        "UOM Weight": "Kg",
         "Weight": "62.821",
         "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
+        "Machine Type": "IS SMALL 4 1/4”,",
+        "Kit Availability": "200-249-1KB, 200-249-1KC, 200-249-1KD",
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "N/A",
-        "Notes for Customer": "N/A"
+        "Notes for Customer": "N/A",
+        "Availability": "N/A",
       }
     },
 
@@ -647,8 +642,8 @@ const MECHANISM = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, 
-  ["showComparison", "showCart", "modalImg"]);
+  },
+    ["showComparison", "showCart", "modalImg"]);
 
   const renderComparisonModal = () => (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">

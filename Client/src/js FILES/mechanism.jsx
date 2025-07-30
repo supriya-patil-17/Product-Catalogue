@@ -46,8 +46,11 @@ const MECHANISMS = () => {
         "Lead Time": "2 weeks",
         "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "Available",
+        "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
+        "Kit Availability": "200-248-3KB
+                              200-248 - 3KC
+200-248 - 3KD1
+200-248 - 3KD2",
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "High-quality gear assembly.",
         "Notes for Customer": "Check compatibility."
