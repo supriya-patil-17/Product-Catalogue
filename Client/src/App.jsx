@@ -3,8 +3,8 @@ import DashboardLayout from './Components/Layout/Layout';
 import SpareParts from './Components/SpareParts'
 import Assembly from './Components/Assembly';
 import Variables from './Components/Variables';
-import Mechanism from './Components/Mechanism';
-import RepairKit from './Components/RepairKit';
+import Mechanism from './Pages/Mechanism';
+import RepairKit from './Pages/RepairKit';
 
 function App() {
   return (
