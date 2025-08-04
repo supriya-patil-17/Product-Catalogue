@@ -4,6 +4,7 @@ import SpareParts from './Components/SpareParts'
 import Assembly from './Components/Assembly';
 import Variables from './Components/Variables';
 import Mechanism from './Components/Mechanism';
+import RepairKit from './Components/RepairKit';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="assembly" element={<Assembly />} />
           <Route path="variables" element={<Variables />} />
           <Route path="mechanism" element={<Mechanism />} />
+          <Route path="repair-kit" element={<RepairKit />} />
         </Route>
       </Routes>
     </Router>
