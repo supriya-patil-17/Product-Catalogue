@@ -262,7 +262,6 @@ const MECHANISM = () => {
       }
     },
 
-
     {
       "name": "Funnel Mechanism 4-1/4\", 5\"",
       "ref": "200-247-1",
