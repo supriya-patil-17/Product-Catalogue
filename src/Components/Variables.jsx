@@ -59,7 +59,7 @@ const VARIABLES = () => {
       "name": "BLOWHEAD ARM 5 1/2 DG T",
       "ref": "200-202-14",
       "img": "https://placehold.co/400x300",
-      "alt": "BLOWHEAD ARM 5 1/2 DG T",
+      "alt": "Baffle Mechanism 5 1/2\"",
       "details": {
         "Variable Name": "BLOWHEAD ARM 5 1/2 DG T",
         "Reference No": "200-202-14",
@@ -68,9 +68,9 @@ const VARIABLES = () => {
         "Lead Time": "8 weeks",
         "Machine Center Distance": "N/A",
         "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
-        "Kit Availability": "200-202-14KC",
+        "Kit Availability": "210-146-1KB, 210-146-1KC, 210-146-1KD",
         "Machine Size": "5 1/2\"",
-        "General Description": "BLOWHEAD ARM 5 1/2 DG T",
+        "General Description": "BAFFLE MECH. EF 5 1/2\"",
         "Notes for Customer": "N/A",
         "Availability": "N/A",
       }
@@ -873,4 +873,4 @@ const VARIABLES = () => {
   );
 };
 
-export default VARIABLES;
+export default Variables
