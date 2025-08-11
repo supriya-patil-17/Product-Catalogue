@@ -6,6 +6,6 @@ import Assembly from './Components/Assembly.jsx'
 
 createRoot(document.getElementById('root')).render(
 
-    <Assembly/>
-  
+    <Assembly />
+
 )

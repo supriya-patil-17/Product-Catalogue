@@ -126,6 +126,7 @@ const parts =
           Weight - <br />
           Machine Type - <br />
           Kit Availability - <br />
+          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
           General Description - <br />
           Reference 1 - <br />
           Production Time - <br />
