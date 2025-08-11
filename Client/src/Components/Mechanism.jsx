@@ -70,7 +70,7 @@ function Mechanism() {
 
   return (
     <div>
-      <style>{styles}</style>
+      <style>{"styles"}</style>
       <h1>MECHANISM</h1>
       <div className="search-box">
         <input
