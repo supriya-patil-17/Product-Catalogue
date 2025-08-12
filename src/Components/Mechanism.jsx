@@ -14,7 +14,7 @@ const MECHANISM = () => {
     {
       "name": "Baffle Mechanism 4 1/4 5\"",
       "ref": "200-248-3",
-      "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-3.jpg",
+      "img": "https://placehold.co/400x300",
       "alt": "Baffle Mechanism 4 1/4 5\"",
       "details": {
         "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
@@ -35,7 +35,7 @@ const MECHANISM = () => {
     {
       "name": "Baffle Mechanism 4 1/4\", 5\"",
       "ref": "200-248-4",
-      "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-4.jpg",
+      "img": "https://placehold.co/400x300",
       "alt": "Baffle Mechanism 4 1/4\", 5\"",
       "details": {
         "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
@@ -478,6 +478,7 @@ const MECHANISM = () => {
         "Unit": "N/A",
         "Weight": "N/A",
         "Lead Time": "8 weeks",
+        "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
         "Machine Type": "STR",
         "Kit Availability": "N/A",
@@ -829,19 +830,9 @@ const MECHANISM = () => {
                 <div className="mt-4">
                   <div className="text-sm space-y-2">
                     {Object.entries(part.details).map(([key, value]) => (
-                      <div key={key} className="flex flex-col mb-2">
-                        {key === "Kit Availability" && value ? (
-                          <>
-                            <span className="font-medium">Available Kits:</span>
-                            <ul className="list-disc list-inside ml-4">
-                              {value.split(',').map((kit, idx) => (
-                                <li key={idx}>{kit.trim()}</li>
-                              ))}
-                            </ul>
-                          </>
-                        ) : (
-                          <span><span className="font-medium">{key}:</span> <span className="ml-2">{value || '-'}</span></span>
-                        )}
+                      <div key={key} className="flex">
+                        <span className="font-medium w-40">{key}:</span>
+                        <span className="flex-1">{value || '-'}</span>
                       </div>
                     ))}
                   </div>

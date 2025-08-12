@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MECHANISM = () => {
+const VARIABLES = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
@@ -12,55 +12,57 @@ const MECHANISM = () => {
 
   const parts = [
     {
-      "name": "Baffle Mechanism 4 1/4 5\"",
-      "ref": "200-248-3",
-      "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-3.jpg",
-      "alt": "Baffle Mechanism 4 1/4 5\"",
+      "name": "QC BAFFLE ARM 5 1/2 DG",
+      "ref": "23-1435-2",
+      "img": "https://placehold.co/400x300",
+      "alt": "QC BAFFLE ARM 5 1/2 DG",
       "details": {
-        "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
-        "Reference No": "200-248-3",
+        "Variable Name": "QC BAFFLE ARM 5 1/2 DG",
+        "Reference No": "23-1435-2",
         "UOM Weight": "Kg",
         "Weight": "57.600",
         "Lead Time": "2 weeks",
-        "Machine Center Distance": "N/A",
+        "Machine Center Distance": "5 1/2\"",
         "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
         "Kit Availability": "200-248-3K, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+        "Baffle Motion": "CONVENTIONAL",
         "Notes for Customer": "N/A",
         "Availability": " N/A",
       }
     },
 
     {
-      "name": "Baffle Mechanism 4 1/4\", 5\"",
-      "ref": "200-248-4",
-      "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-4.jpg",
-      "alt": "Baffle Mechanism 4 1/4\", 5\"",
+      "name": "QC BAFFLE ARM 6 1/4 DG",
+      "ref": "23-1435-3",
+      "img": "https://placehold.co/400x300",
+      "alt": "QC BAFFLE ARM 6 1/4 DG",
       "details": {
-        "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
-        "Reference No": "200-248-4",
+        "Variable Name": "QC BAFFLE ARM 6 1/4 DG",
+        "Reference No": "23-1435-3",
         "UOM Weight": "Kg",
         "Weight": "64.319",
         "Lead Time": "8 weeks",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
-        "Kit Availability": "200-248-4KB,200-248-4KC",
+        "Machine Center Distance": "6 1/4\",",
+        "Machine Type": "IS LARGE 6 1/4\", AIS",
+        "Kit Availability": "23-1435-3KB, 23-1435-3KC",
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+        "Baffle Motion": "CONVENTIONAL",
         "Notes for Customer": "N/A",
         "Availability": "N/A",
       }
     },
 
     {
-      "name": "Baffle Mechanism 5 1/2\"",
-      "ref": "210-146-1",
+      "name": "BLOWHEAD ARM 5 1/2 DG T",
+      "ref": "200-202-14",
       "img": "https://placehold.co/400x300",
       "alt": "Baffle Mechanism 5 1/2\"",
       "details": {
-        "Mechanism Name": "Baffle Mechanism 5 1/2\"",
-        "Reference No": "210-146-1",
+        "Variable Name": "BLOWHEAD ARM 5 1/2 DG T",
+        "Reference No": "200-202-14",
         "UOM Weight": "Kg",
         "Weight": "62.600",
         "Lead Time": "8 weeks",
@@ -478,6 +480,7 @@ const MECHANISM = () => {
         "Unit": "N/A",
         "Weight": "N/A",
         "Lead Time": "8 weeks",
+        "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
         "Machine Type": "STR",
         "Kit Availability": "N/A",
@@ -641,7 +644,7 @@ const MECHANISM = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   },
-    [showComparison, showCart, modalImg]);
+    ["showComparison", "showCart", "modalImg"]);
 
   const renderComparisonModal = () => (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -829,19 +832,9 @@ const MECHANISM = () => {
                 <div className="mt-4">
                   <div className="text-sm space-y-2">
                     {Object.entries(part.details).map(([key, value]) => (
-                      <div key={key} className="flex flex-col mb-2">
-                        {key === "Kit Availability" && value ? (
-                          <>
-                            <span className="font-medium">Available Kits:</span>
-                            <ul className="list-disc list-inside ml-4">
-                              {value.split(',').map((kit, idx) => (
-                                <li key={idx}>{kit.trim()}</li>
-                              ))}
-                            </ul>
-                          </>
-                        ) : (
-                          <span><span className="font-medium">{key}:</span> <span className="ml-2">{value || '-'}</span></span>
-                        )}
+                      <div key={key} className="flex">
+                        <span className="font-medium w-40">{key}:</span>
+                        <span className="flex-1">{value || '-'}</span>
                       </div>
                     ))}
                   </div>
@@ -880,4 +873,4 @@ const MECHANISM = () => {
   );
 };
 
-export default MECHANISM;
+export default Variables
