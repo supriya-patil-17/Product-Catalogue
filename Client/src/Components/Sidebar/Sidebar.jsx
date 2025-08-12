@@ -1,33 +1,30 @@
-import { NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Sidebar.css";
 
 const Sidebar = () => {
-    const links = [
-        { name: 'Spare Parts', to: '/spare-parts' },
-        { name: 'Assembly', to: '/assembly' },
-        { name: 'Variables', to: '/variables' },
-        { name: 'Mechanism', to: '/mechanism' },
-        { name: 'Repair Kit', to: '/repair-kit' }
+    const [isOpen, setIsOpen] = useState(false);
 
-    ];
+    const toggleSidebar = () => setIsOpen(!isOpen);
 
     return (
-        <aside className="  w-60 bg-blue-900 text-white h-screen p-4">
-            <h2 className="text-xl font-bold mb-6">ACCURAMECH CATALOGUE</h2>
-            <nav className="space-y-2">
-                {links.map(link => (
-                    <NavLink
-                        key={link.to}
-                        to={link.to}
-                        className={({ isActive }) =>
-                            `block px-4 py-2 rounded hover:bg-blue-700 ${isActive ? 'bg-blue-700' : ''
-                            }`
-                        }
-                    >
-                        {link.name}
-                    </NavLink>
-                ))}
-            </nav>
-        </aside>
+        <>
+            <button className="sidebar-toggle" onClick={toggleSidebar}>
+                ☰
+            </button>
+            <div className={`sidebar ${isOpen ? "open" : ""}`}>
+                <h2>Dashboard</h2>
+                <nav>
+                    <ul>
+                        <li><NavLink to="/assembly">Assembly</NavLink></li>
+                        <li><NavLink to="/mechanism">Mechanism</NavLink></li>
+                        <li><NavLink to="/repair-kit">Repair Kit</NavLink></li>
+                        <li><NavLink to="/spare-parts">Spare Parts</NavLink></li>
+                        <li><NavLink to="/variables">Variables</NavLink></li>
+                    </ul>
+                </nav>
+            </div>
+        </>
     );
 };
 

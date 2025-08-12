@@ -832,7 +832,7 @@ const MECHANISM = () => {
                       <div key={key} className="flex flex-col mb-2">
                         {key === "Kit Availability" && value ? (
                           <>
-                            <span className="font-medium">Available Kits:</span>
+                            <span className="font-medium">Kit Availability:</span>
                             <ul className="list-disc list-inside ml-4">
                               {value.split(',').map((kit, idx) => (
                                 <li key={idx}>{kit.trim()}</li>
@@ -880,4 +880,4 @@ const MECHANISM = () => {
   );
 };
 
-export default MECHANISM;
+export default MECHANISM
