@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const MECHANISM = () => {
+const ASSEMBLY = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
