@@ -13,21 +13,21 @@ const ASSEMBLY = () => {
 
     const parts = [
         {
-            "name": "Baffle Mechanism 4 1/4 5\"",
-            "ref": "200-248-3",
+            "name": "Mould Insert Set 1363",
+            "ref": "09750152",
             "img": "https://placehold.co/400x300",
-            "alt": "Baffle Mechanism 4 1/4 5\"",
+            "alt": "Mould Insert Set 1363",
             "details": {
-                "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
-                "Reference No": "200-248-3",
+                "Mechanism Name": "Mould Insert Set 1363",
+                "Reference No": "09750152",
                 "UOM": "EA",
                 "Weight": "57.600",
                 "Lead Time": "10 weeks",
                 "Assembly Reference 1": "N/A",
                 "Machine Center Distance": "N/A",
-                "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
+                "Machine Type": "IS ",
                 "Kit Availability": "200-248-3KB, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
+                "Machine Size": "127mm",
                 "General Description": "BAFFLE MECH 4 1/4 & 5\"",
                 "Notes for Customer": "Check compatibility.",
                 "Availability": "In Stock"
@@ -35,13 +35,13 @@ const ASSEMBLY = () => {
         },
 
         {
-            "name": "Baffle Mechanism 4 1/4\", 5\"",
-            "ref": "200-248-4",
+            "name": "Mould Insert Set O 1363 181",
+            "ref": "09750153",
             "img": "https://placehold.co/400x300",
-            "alt": "Baffle Mechanism 4 1/4\", 5\"",
+            "alt": "Mould Insert Set O 1363 181",
             "details": {
-                "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
-                "Reference No": "200-248-4",
+                "Mechanism Name": "Mould Insert Set O 1363 181",
+                "Reference No": "09750153",
                 "Availability": "N/A",
                 "Price": "N/A",
                 "Unit": "N/A",
@@ -51,19 +51,19 @@ const ASSEMBLY = () => {
                 "Machine Center Distance": "N/A",
                 "Machine Type": "STR",
                 "Kit Availability": "N/A",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
+                "Machine Size": "127mm ",
                 "General Description": "N/A",
                 "Notes for Customer": "N/A"
             }
         },
 
         {
-            "name": "Baffle Mechanism 5 1/2\"",
-            "ref": "210-146-1",
+            "name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+            "ref": "210-320-2",
             "img": "https://placehold.co/400x300",
-            "alt": "Baffle Mechanism 5 1/2\"",
+            "alt": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
             "details": {
-                "Mechanism Name": "Baffle Mechanism 5 1/2\"",
+                "Mechanism Name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
                 "Reference No": "210-146-1",
                 "Availability": "N/A",
                 "Unit": "N/A",
