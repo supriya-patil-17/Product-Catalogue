@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const VARIABLES = () => {
+const MECHANISM = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
@@ -644,7 +644,7 @@ const VARIABLES = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   },
-    ["showComparison", "showCart", "modalImg"]);
+    [showComparison, showCart, modalImg]);
 
   const renderComparisonModal = () => (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -832,9 +832,19 @@ const VARIABLES = () => {
                 <div className="mt-4">
                   <div className="text-sm space-y-2">
                     {Object.entries(part.details).map(([key, value]) => (
-                      <div key={key} className="flex">
-                        <span className="font-medium w-40">{key}:</span>
-                        <span className="flex-1">{value || '-'}</span>
+                      <div key={key} className="flex flex-col mb-2">
+                        {key === "Kit Availability" && value ? (
+                          <>
+                            <span className="font-medium">Kit Availability:</span>
+                            <ul className="list-disc list-inside ml-4">
+                              {value.split(',').map((kit, idx) => (
+                                <li key={idx}>{kit.trim()}</li>
+                              ))}
+                            </ul>
+                          </>
+                        ) : (
+                          <span><span className="font-medium">{key}:</span> <span className="ml-2">{value || '-'}</span></span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -873,4 +883,4 @@ const VARIABLES = () => {
   );
 };
 
-export default VARIABLES;
+export default MECHANISM

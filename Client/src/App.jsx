@@ -1,10 +1,11 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import DashboardLayout from './Components/Layout/Layout';
-import SpareParts from './Components/SpareParts'
+import SpareParts from './Components/SpareParts';
 import Assembly from './Components/Assembly';
 import Variables from './Components/Variables';
-import Mechanism from './Pages/Mechanism';
-import RepairKit from './Pages/RepairKit';
+import Mechanism from './Components/Mechanism';
+import RepairKit from './Components/RepairKit';
 
 function App() {
   return (
