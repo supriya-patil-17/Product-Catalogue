@@ -881,8 +881,4 @@ const MECHANISM = () => {
   );
 };
 
-<<<<<<< HEAD
-export default MECHANISM
-=======
-export default MECHANISM
->>>>>>> 3f809eb917c561c84a791ba48d1c75097fb66e4c
+export default Mechanim; 
