@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ComparisonModal from "../Components/ComparsionModel/ComparisonModal"; 
 import CartModal from "../Components/ComparsionModel/CartModal";
+import DetailsModal from "../Components/DetailModel/DetailsModal ";
 
 const Mechanism = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
-  const [showDesc, setShowDesc] = useState({});
   const [selectedParts, setSelectedParts] = useState([]);
   const [showComparison, setShowComparison] = useState(false);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  const [detailPart, setDetailPart] = useState(null);
 
   const parts = [
     {
@@ -106,13 +107,6 @@ const Mechanism = () => {
       part.ref.toLowerCase().includes(search.toLowerCase())
   );
 
-  const handleShowDesc = (idx) => {
-    setShowDesc((prev) => ({
-      ...prev,
-      [idx]: !prev[idx],
-    }));
-  };
-
   const addToCart = (part) => {
     const existingPart = cart.find((p) => p.ref === part.ref);
     if (existingPart) {
@@ -139,6 +133,7 @@ const Mechanism = () => {
       if (showComparison) setShowComparison(false);
       if (showCart) setShowCart(false);
       if (modalImg) setModalImg(null);
+      if (detailPart) setDetailPart(null);
     }
   };
 
@@ -147,23 +142,18 @@ const Mechanism = () => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [showComparison, showCart, modalImg]);
-
-
+  }, [showComparison, showCart, modalImg, detailPart]);
 
   const removeFromCart = (ref) => {
-  setCart((prev) => prev.filter((p) => p.ref !== ref));
-};
+    setCart((prev) => prev.filter((p) => p.ref !== ref));
+  };
 
-const updateQuantity = (ref, quantity) => {
-  if (quantity < 1) return;
-  setCart((prev) =>
-    prev.map((p) =>
-      p.ref === ref ? { ...p, quantity: quantity } : p
-    )
-  );
-};
-
+  const updateQuantity = (ref, quantity) => {
+    if (quantity < 1) return;
+    setCart((prev) =>
+      prev.map((p) => (p.ref === ref ? { ...p, quantity } : p))
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 relative">
@@ -187,7 +177,7 @@ const updateQuantity = (ref, quantity) => {
 
       {/* Grid parts */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredParts.map((part, idx) => (
+        {filteredParts.map((part) => (
           <div
             key={part.ref}
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
@@ -206,13 +196,10 @@ const updateQuantity = (ref, quantity) => {
 
               <div className="flex justify-between items-center mb-2">
                 <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleShowDesc(idx);
-                  }}
+                  onClick={() => setDetailPart(part)}
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
-                  {showDesc[idx] ? "Hide Details" : "View Details"}
+                  View Details
                 </button>
 
                 <button
@@ -235,19 +222,6 @@ const updateQuantity = (ref, quantity) => {
                   Add to Cart
                 </button>
               </div>
-
-              {showDesc[idx] && (
-                <div className="mt-4">
-                  <div className="text-sm space-y-2">
-                    {Object.entries(part.details).map(([key, value]) => (
-                      <div key={key} className="flex">
-                        <span className="font-medium w-40">{key}:</span>
-                        <span className="flex-1">{value || "-"}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         ))}
@@ -297,12 +271,21 @@ const updateQuantity = (ref, quantity) => {
         />
       )}
 
+      {/* Cart Modal */}
       {showCart && (
         <CartModal
           cart={cart}
           onClose={() => setShowCart(false)}
           removeFromCart={removeFromCart}
           updateQuantity={updateQuantity}
+        />
+      )}
+
+      {/* Details Modal */}
+      {detailPart && (
+        <DetailsModal
+          part={detailPart}
+          onClose={() => setDetailPart(null)}
         />
       )}
     </div>
