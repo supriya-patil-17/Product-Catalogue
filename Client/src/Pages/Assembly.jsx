@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ComparisonModal from "../Components/ComparsionModel/ComparisonModal"; 
+import CartModal from "../Components/ComparsionModel/CartModal";
 
 const Mechanism = () => {
   const [search, setSearch] = useState("");
@@ -148,6 +149,22 @@ const Mechanism = () => {
     };
   }, [showComparison, showCart, modalImg]);
 
+
+
+  const removeFromCart = (ref) => {
+  setCart((prev) => prev.filter((p) => p.ref !== ref));
+};
+
+const updateQuantity = (ref, quantity) => {
+  if (quantity < 1) return;
+  setCart((prev) =>
+    prev.map((p) =>
+      p.ref === ref ? { ...p, quantity: quantity } : p
+    )
+  );
+};
+
+
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 relative">
       {/* HEADER with Title */}
@@ -277,6 +294,15 @@ const Mechanism = () => {
         <ComparisonModal
           parts={selectedParts}
           onClose={() => setShowComparison(false)}
+        />
+      )}
+
+      {showCart && (
+        <CartModal
+          cart={cart}
+          onClose={() => setShowCart(false)}
+          removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
         />
       )}
     </div>
