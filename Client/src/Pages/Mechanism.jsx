@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-
 import ComparisonModal from "../Components/ComparsionModel/ComparisonModal";
-import CartModal from "../Components/ComparsionModel/CartModal"
+import CartModal from "../Components/ComparsionModel/CartModal";
+import DetailsModal from "../Components/DetailModel/DetailsModal "
 
 const Mechanism = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
-  const [showDesc, setShowDesc] = useState({});
   const [selectedParts, setSelectedParts] = useState([]);
   const [showComparison, setShowComparison] = useState(false);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
-
+  const [detailPart, setDetailPart] = useState(null); // <-- for DetailsModal
 
   const parts = [
     {
@@ -48,19 +47,12 @@ const Mechanism = () => {
     },
   ];
 
-  // ----- Filtering -----
   const filteredParts = parts.filter(
     (part) =>
       part.name.toLowerCase().includes(search.toLowerCase()) ||
       part.ref.toLowerCase().includes(search.toLowerCase())
   );
 
-  // ----- Expand/Collapse details -----
-  const handleShowDesc = (idx) => {
-    setShowDesc((prev) => ({ ...prev, [idx]: !prev[idx] }));
-  };
-
-  // ----- Cart -----
   const addToCart = (part) => {
     const existing = cart.find((p) => p.ref === part.ref);
     if (existing) {
@@ -85,7 +77,6 @@ const Mechanism = () => {
     );
   };
 
-  // ----- Comparison -----
   const toggleSelectForComparison = (part) => {
     setSelectedParts((prev) =>
       prev.find((p) => p.ref === part.ref)
@@ -94,23 +85,22 @@ const Mechanism = () => {
     );
   };
 
-  // ----- Escape key handling -----
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       if (showComparison) setShowComparison(false);
       if (showCart) setShowCart(false);
       if (modalImg) setModalImg(null);
+      if (detailPart) setDetailPart(null); // <-- close DetailsModal on Escape
     }
   };
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showComparison, showCart, modalImg]);
+  }, [showComparison, showCart, modalImg, detailPart]);
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 relative">
-      
       {/* HEADER */}
       <div className="flex justify-center items-center mb-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center">
@@ -131,7 +121,7 @@ const Mechanism = () => {
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredParts.map((part, idx) => (
+        {filteredParts.map((part) => (
           <div
             key={part.ref}
             className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
@@ -150,13 +140,10 @@ const Mechanism = () => {
 
               <div className="flex justify-between items-center mb-2">
                 <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleShowDesc(idx);
-                  }}
+                  onClick={() => setDetailPart(part)}
                   className="text-blue-600 hover:text-blue-800 font-medium"
                 >
-                  {showDesc[idx] ? "Hide Details" : "View Details"}
+                  View Details
                 </button>
 
                 <div className="flex gap-2">
@@ -180,19 +167,6 @@ const Mechanism = () => {
                   </button>
                 </div>
               </div>
-
-              {showDesc[idx] && (
-                <div className="mt-4">
-                  <div className="text-sm space-y-2">
-                    {Object.entries(part.details).map(([key, value]) => (
-                      <div key={key} className="flex">
-                        <span className="font-medium w-40">{key}:</span>
-                        <span className="flex-1">{value || "-"}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         ))}
@@ -207,15 +181,11 @@ const Mechanism = () => {
           >
             &times;
           </span>
-          <img
-            src={modalImg}
-            alt="Enlarged view"
-            className="max-w-full max-h-full"
-          />
+          <img src={modalImg} alt="Enlarged view" className="max-w-full max-h-full" />
         </div>
       )}
 
-      {/* Floating buttons */}
+      {/* Floating Buttons */}
       {selectedParts.length > 0 && (
         <button
           onClick={() => setShowComparison(true)}
@@ -248,6 +218,13 @@ const Mechanism = () => {
           onClose={() => setShowCart(false)}
           removeFromCart={removeFromCart}
           updateQuantity={updateQuantity}
+        />
+      )}
+
+      {detailPart && (
+        <DetailsModal
+          part={detailPart}
+          onClose={() => setDetailPart(null)}
         />
       )}
     </div>
