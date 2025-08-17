@@ -15,7 +15,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu"; // hamburger
 import CloseIcon from "@mui/icons-material/Close"; // top close
 import ChevronRightIcon from "@mui/icons-material/ChevronRight"; // bottom close
-import { FaCogs, FaBoxOpen, FaTools, FaPuzzlePiece } from "react-icons/fa";
+import { FaCogs, FaBoxOpen, FaTools, FaPuzzlePiece, FaHome } from "react-icons/fa";
 
 const drawerWidth = 260;
 
@@ -23,6 +23,7 @@ const CollapsibleSidebar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
+    { name: "Home", to: "/", icon: <FaHome /> }, // ✅ Added Home
     { name: "Spare Parts", to: "/dashboard/spare-parts", icon: <FaBoxOpen /> },
     { name: "Assembly", to: "/dashboard/assembly", icon: <FaCogs /> },
     { name: "Variables", to: "/dashboard/variables", icon: <FaPuzzlePiece /> },
@@ -73,26 +74,21 @@ const CollapsibleSidebar = () => {
       {/* Navigation */}
       <List sx={{ flexGrow: 1 }}>
         {links.map((link) => (
-          <ListItem
-            key={link.to}
-            disablePadding
-            sx={{
-              "& .active": {
-                backgroundColor: "white",
-                color: "#1e3a8a",
-                borderRadius: "12px",
-                fontWeight: "bold",
-              },
-            }}
-          >
+          <ListItem key={link.to} disablePadding>
             <ListItemButton
               component={NavLink}
               to={link.to}
+              end={link.to === "/"}
               sx={{
                 px: 3,
                 py: 1.5,
                 borderRadius: "12px",
                 color: "white",
+                "&.active": {
+                  backgroundColor: "white",
+                  color: "#1e3a8a",
+                  fontWeight: "bold",
+                },
                 "&:hover": {
                   backgroundColor: "rgba(255,255,255,0.15)",
                   pl: 4,
@@ -141,22 +137,18 @@ const CollapsibleSidebar = () => {
   return (
     <>
       {/* Hamburger trigger */}
-{/* Show hamburger only when sidebar is closed */}
-{!open && (
-  <IconButton
-    onClick={toggleDrawer(true)}
-    sx={{
-      position: "fixed",
-      top: 16,
-      right: 16,
-      color: "#1e3a8a",
-      zIndex: 1300,
-    }}
-  >
-    <MenuIcon fontSize="large" />
-  </IconButton>
-)}
-
+      <IconButton
+        onClick={toggleDrawer(true)}
+        sx={{
+          position: "fixed",
+          top: 16,
+          right: 16,
+          color: "#1e3a8a",
+          zIndex: 1200, // ✅ lower than Drawer
+        }}
+      >
+        <MenuIcon fontSize="large" />
+      </IconButton>
 
       {/* Drawer */}
       <Drawer

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 
+
+import ComparisonModal from "../Components/ComparsionModel/ComparisonModal";
+import CartModal from "../Components/ComparsionModel/CartModal"
+
 const Mechanism = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
@@ -8,7 +12,7 @@ const Mechanism = () => {
   const [showComparison, setShowComparison] = useState(false);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
-  const [userName, setUserName] = useState("");
+
 
   const parts = [
     {
@@ -23,13 +27,8 @@ const Mechanism = () => {
         Unit: "Each",
         Weight: "57.600",
         "Lead Time": "2 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
         "Machine Type": "STR",
         "Kit Availability": "Available",
-        "Machine Size": '85mm, 4 1/4", 5"',
-        "General Description": "High-quality gear assembly.",
-        "Notes for Customer": "Check compatibility.",
       },
     },
     {
@@ -41,80 +40,30 @@ const Mechanism = () => {
         "Mechanism Name": 'Baffle Mechanism 4 1/4", 5"',
         "Reference No": "200-248-4",
         Availability: "N/A",
-        Price: "N/A",
-        Unit: "N/A",
         Weight: "64.319",
         "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
         "Machine Type": "STR",
         "Kit Availability": "N/A",
-        "Machine Size": '85mm, 4 1/4", 5"',
-        "General Description": "N/A",
-        "Notes for Customer": "N/A",
-      },
-    },
-    {
-      name: 'Baffle Mechanism 5 1/2"',
-      ref: "210-146-1",
-      img: "https://placehold.co/400x300",
-      alt: 'Baffle Mechanism 5 1/2"',
-      details: {
-        "Mechanism Name": 'Baffle Mechanism 5 1/2"',
-        "Reference No": "210-146-1",
-        Availability: "N/A",
-        Unit: "N/A",
-        Weight: "62.600",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": '5 1/2"',
-        "General Description": "N/A",
-        "Notes for Customer": "N/A",
-      },
-    },
-    {
-      name: "Blow Head Mechanism 5",
-      ref: "200-249-1",
-      img: "https://placehold.co/400x300",
-      alt: "Blow head Mechanism 5",
-      details: {
-        "Mechanism Name": "Blow head Mechanism 5",
-        "Reference No": "200-249-1",
-        Availability: "N/A",
-        Price: "N/A",
-        Unit: "N/A",
-        Weight: "62.821",
-        "Lead Time": "8 weeks",
-        "Assembly Reference 1": "N/A",
-        "Machine Center Distance": "N/A",
-        "Machine Type": "STR",
-        "Kit Availability": "N/A",
-        "Machine Size": '85mm, 4 1/4", 5"',
-        "General Description": "N/A",
-        "Notes for Customer": "N/A",
       },
     },
   ];
 
+  // ----- Filtering -----
   const filteredParts = parts.filter(
     (part) =>
       part.name.toLowerCase().includes(search.toLowerCase()) ||
       part.ref.toLowerCase().includes(search.toLowerCase())
   );
 
+  // ----- Expand/Collapse details -----
   const handleShowDesc = (idx) => {
-    setShowDesc((prev) => ({
-      ...prev,
-      [idx]: !prev[idx],
-    }));
+    setShowDesc((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
+  // ----- Cart -----
   const addToCart = (part) => {
-    const existingPart = cart.find((p) => p.ref === part.ref);
-    if (existingPart) {
+    const existing = cart.find((p) => p.ref === part.ref);
+    if (existing) {
       setCart((prev) =>
         prev.map((p) =>
           p.ref === part.ref ? { ...p, quantity: p.quantity + 1 } : p
@@ -126,18 +75,26 @@ const Mechanism = () => {
   };
 
   const removeFromCart = (ref) => {
-    setCart((prev) => prev.filter((part) => part.ref !== ref));
+    setCart((prev) => prev.filter((p) => p.ref !== ref));
   };
 
   const updateQuantity = (ref, quantity) => {
     if (quantity < 1) return;
     setCart((prev) =>
-      prev.map((part) =>
-        part.ref === ref ? { ...part, quantity } : part
-      )
+      prev.map((p) => (p.ref === ref ? { ...p, quantity } : p))
     );
   };
 
+  // ----- Comparison -----
+  const toggleSelectForComparison = (part) => {
+    setSelectedParts((prev) =>
+      prev.find((p) => p.ref === part.ref)
+        ? prev.filter((p) => p.ref !== part.ref)
+        : [...prev, part]
+    );
+  };
+
+  // ----- Escape key handling -----
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       if (showComparison) setShowComparison(false);
@@ -148,25 +105,19 @@ const Mechanism = () => {
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [showComparison, showCart, modalImg]);
-
-  // TODO: implement renderComparisonModal & renderCartModal
-  const renderComparisonModal = () => null;
-  const renderCartModal = () => null;
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8 relative">
-      {/* HEADER with Title */}
+      {/* HEADER */}
       <div className="flex justify-center items-center mb-8">
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center">
-          ASSEMBLY PARTS
+          MECHANISM PARTS
         </h1>
       </div>
 
-      {/* Search bar */}
+      {/* Search */}
       <div className="max-w-3xl mx-auto mb-8">
         <input
           type="text"
@@ -177,7 +128,7 @@ const Mechanism = () => {
         />
       </div>
 
-      {/* Grid parts */}
+      {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredParts.map((part, idx) => (
           <div
@@ -207,14 +158,26 @@ const Mechanism = () => {
                   {showDesc[idx] ? "Hide Details" : "View Details"}
                 </button>
 
-                <button
-                  onClick={() => {
-                    addToCart(part);
-                  }}
-                  className="px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
-                >
-                  Add to Cart
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => addToCart(part)}
+                    className="px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
+                  >
+                    Add to Cart
+                  </button>
+                  <button
+                    onClick={() => toggleSelectForComparison(part)}
+                    className={`px-3 py-1.5 rounded-md text-xs font-medium ${
+                      selectedParts.find((p) => p.ref === part.ref)
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                    }`}
+                  >
+                    {selectedParts.find((p) => p.ref === part.ref)
+                      ? "Selected"
+                      : "Compare"}
+                  </button>
+                </div>
               </div>
 
               {showDesc[idx] && (
@@ -271,8 +234,21 @@ const Mechanism = () => {
       )}
 
       {/* Modals */}
-      {showComparison && renderComparisonModal()}
-      {showCart && renderCartModal()}
+      {showComparison && (
+        <ComparisonModal
+          parts={selectedParts}
+          onClose={() => setShowComparison(false)}
+        />
+      )}
+
+      {showCart && (
+        <CartModal
+          cart={cart}
+          onClose={() => setShowCart(false)}
+          removeFromCart={removeFromCart}
+          updateQuantity={updateQuantity}
+        />
+      )}
     </div>
   );
 };
