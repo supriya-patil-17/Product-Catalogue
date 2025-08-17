@@ -55,8 +55,8 @@ function Variables() {
 
   return (
     <div>
-      <style>{styles}</style>
-      <h1>VARIABLES</h1>
+      {/* <style>{styles}</style> */}
+      <h1>VARIABLE S</h1>
       <div className="search-box">
         <input
           type="text"
