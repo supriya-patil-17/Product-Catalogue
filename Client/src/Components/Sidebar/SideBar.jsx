@@ -17,17 +17,17 @@ import CloseIcon from "@mui/icons-material/Close"; // top close
 import ChevronRightIcon from "@mui/icons-material/ChevronRight"; // bottom close
 import { FaCogs, FaBoxOpen, FaTools, FaPuzzlePiece, FaHome } from "react-icons/fa";
 
-const drawerWidth = 260;
+const drawerWidth = 300;
 
 const CollapsibleSidebar = () => {
   const [open, setOpen] = useState(false);
 
   const links = [
     { name: "Home", to: "/", icon: <FaHome /> }, // ✅ Added Home
-    { name: "Spare Parts", to: "/dashboard/spare-parts", icon: <FaBoxOpen /> },
-    { name: "Assembly", to: "/dashboard/assembly", icon: <FaCogs /> },
-    { name: "Variables", to: "/dashboard/variables", icon: <FaPuzzlePiece /> },
-    { name: "Mechanism", to: "/dashboard/mechanism", icon: <FaTools /> },
+    { name: "Spare Parts", to: "/spare-parts", icon: <FaBoxOpen /> },
+    { name: "Assembly", to: "/assembly", icon: <FaCogs /> },
+    { name: "Variables", to: "/variables", icon: <FaPuzzlePiece /> },
+    { name: "Mechanism", to: "/mechanism", icon: <FaTools /> },
   ];
 
   const toggleDrawer = (newOpen) => () => {
@@ -144,15 +144,15 @@ const CollapsibleSidebar = () => {
           top: 16,
           right: 16,
           color: "#1e3a8a",
-          zIndex: 1200, // ✅ lower than Drawer
+          zIndex: 1200, 
         }}
       >
-        <MenuIcon fontSize="large" />
+        <MenuIcon fontSize="large" className="text-black" />
       </IconButton>
 
       {/* Drawer */}
       <Drawer
-        anchor="right"
+        anchor="left"
         open={open}
         onClose={toggleDrawer(false)}
         transitionDuration={400} // smooth animation

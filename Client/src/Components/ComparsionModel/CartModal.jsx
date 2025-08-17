@@ -2,7 +2,7 @@ import React from "react";
 
 const CartModal = ({ cart, onClose, removeFromCart, updateQuantity }) => {
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-transparent   bg-opacity-40 flex backdrop-blur-sm items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4 relative">
         {/* Header */}
         <div className="flex justify-between items-center border-b px-6 py-4">

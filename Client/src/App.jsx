@@ -11,16 +11,16 @@ function App() {
     <Router>
       <Routes>
         {/* Landing Page at root */}
-        <Route path="/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
 
         {/* Dashboard layout with nested routes */}
-        <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route path="/" element={<DashboardLayout />}>
+          
           <Route path="spare-parts" element={<SpareParts />} />
           <Route path="assembly" element={<Assembly />} />
           <Route path="variables" element={<Variables />} />
           <Route path="mechanism" element={<Mechanism />} />
           {/* Default route inside dashboard */}
-          <Route index element={<SpareParts />} />
         </Route>
       </Routes>
     </Router>

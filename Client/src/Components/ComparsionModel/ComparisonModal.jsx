@@ -5,7 +5,7 @@ const ComparisonModal = ({ parts, onClose }) => {
   if (!parts || parts.length === 0) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-6">
+    <div className="fixed inset-0 bg-transparent bg-opacity-70 backdrop-blur-sm flex items-center justify-center z-50 p-6">
       <div className="bg-white rounded-lg shadow-lg max-w-5xl w-full overflow-auto max-h-[90vh]">
         {/* Header */}
         <div className="flex justify-between items-center border-b px-4 py-3">
