@@ -868,7 +868,8 @@ const MECHANISM = () => {
       {showComparison && renderComparisonModal()}
       {showCart && renderCartModal()}
     </div >
-  );
+
+);
 };
 
 export default MECHANISM;
