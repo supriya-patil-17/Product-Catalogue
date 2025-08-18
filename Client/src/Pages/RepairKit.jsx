@@ -756,7 +756,7 @@ const REPAIRKIT = () => {
                         }}
                         className="w-full mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
                     >
-                        Add Enquiry
+                        Place Order
                     </button>
                 </div>
                 <button

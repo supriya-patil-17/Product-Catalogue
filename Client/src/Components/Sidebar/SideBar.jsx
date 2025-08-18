@@ -28,6 +28,7 @@ const CollapsibleSidebar = () => {
     { name: "Assembly", to: "/assembly", icon: <FaCogs /> },
     { name: "Variables", to: "/variables", icon: <FaPuzzlePiece /> },
     { name: "Mechanism", to: "/mechanism", icon: <FaTools /> },
+    { name: "Repair Kit", to: "/repair-kit", icon: <FaTools /> }, // ✅ Added Repair Kit
   ];
 
   const toggleDrawer = (newOpen) => () => {
@@ -144,7 +145,7 @@ const CollapsibleSidebar = () => {
           top: 16,
           right: 16,
           color: "#1e3a8a",
-          zIndex: 1200, 
+          zIndex: 1200,
         }}
       >
         <MenuIcon fontSize="large" className="text-black" />

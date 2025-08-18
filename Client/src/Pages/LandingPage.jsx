@@ -14,7 +14,7 @@ const LandingPage = () => {
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-black/60 backdrop-blur-md text-white z-50 shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold tracking-wide">Acccurmech Industries</h1>
+          <h1 className="text-2xl font-bold tracking-wide">ACCURAMECH INDUSTRIES</h1>
           <ul className="hidden md:flex gap-8 text-lg font-medium">
             <li className="hover:text-yellow-400 cursor-pointer">
               <Link to="/spare-parts">SpareParts</Link>
@@ -26,7 +26,10 @@ const LandingPage = () => {
               <Link to="/variables">Variables</Link>
             </li>
             <li className="hover:text-yellow-400 cursor-pointer">
-              <Link to="/mechanism">mechanism</Link>
+              <Link to="/mechanism">Mechanisms</Link>
+            </li>
+            <li className="hover:text-yellow-400 cursor-pointer">
+              <Link to="/repair-kit">Repair Kits</Link>
             </li>
           </ul>
 
@@ -118,11 +121,24 @@ const LandingPage = () => {
             className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform"
           >
             <FaTools className="text-4xl text-indigo-600 mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Mechanism</h3>
+            <h3 className="text-xl font-semibold mb-2">Mechanisms</h3>
             <p className="text-gray-500 text-center text-sm">
               Discover our mechanical mechanisms and components.
             </p>
           </Link>
+
+          {/*Card: RepairKit */}
+          <Link
+            to="/dashboard/repair-kit"
+            className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform"
+          >
+            <FaTools className="text-4xl text-indigo-600 mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Repair Kits</h3>
+            <p className="text-gray-500 text-center text-sm">
+              Explore our comprehensive repair kits for efficient maintenance.
+            </p>
+          </Link>
+
         </div>
       </section>
 
