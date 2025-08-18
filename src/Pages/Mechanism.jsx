@@ -1,162 +1,6 @@
-<<<<<<< HEAD
-// Assembly component
-import React, { useState } from "react";
-import "../styles/assembly.css";
-
-const parts =
-  [
-    {
-      name: "Neck Ring Holder STR Assly",
-      ref: "23-1167-2",
-      img: "C:\\Project2\\Photos\\23-1167-2.jfif",
-      details: (
-        <>
-          Spare Part Name - Funnel Mechanism<br />
-          Machine Size - 6-1/4&quot; 70 mm<br />
-          Reference No - 23-1167-2<br />
-          Lead Time - 10 weeks<br />
-          Weight - <br />
-          Machine Type - <br />
-          Kit Availability - <br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - <br />
-          Notes for Customer - <br />
-        </>
-      ),
-    },
-
-    {
-      name: "Tong Holder Assembly",
-      ref: "23-1168-3",
-      img: "C:\\Project2\\Photos\\191-8319-G01_9_3 finish copy.jpg",
-      details: (
-        <>
-          Spare Part Name - Tong Holder Assembly<br />
-          Machine Size - 8&quot; 100 mm<br />
-          Reference No - 23-1168-3<br />
-          Lead Time - 8 weeks<br />
-          Weight - <br />
-          Machine Type - <br />
-          Kit Availability - <br />
-          Price - <br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - <br />
-          Notes for Customer - <br />
-        </>
-      ),
-    },
-
-    {
-      name: "Blank Mold Holder Arm Assembly",
-      ref: "23-1013-1",
-      img: "C:\\Project 1\\Photos\\Test5.jpg",
-      details: (
-        <>
-          Spare Part Name - Blank Mold Holder Arm Assembly<br />
-          Machine Size - <br />
-          Reference No - 23-1013-1<br />
-          Lead Time - 12 weeks<br />
-          Weight - <br />
-          Machine Type - <br />
-          Kit Availability - <br />
-          Price - <br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - <br />
-          Notes for Customer - <br />
-        </>
-      ),
-    },
-
-    {
-      name: "Blow Head Arm Assembly",
-      ref: "200-202-19",
-      img: "C:\\Project2\\Photos\\image (1).jfif",
-      details: (
-        <>
-          Spare Part Name - Blow Head Arm Assembly<br />
-          Reference No - 200-202-19<br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          Weight - <br />
-          Machine Type - <br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - 10 Weeks<br />
-          Notes for Customer - <br />
-        </>
-      ),
-    },
-
-    {
-      name: "Take out tong head Assembly",
-      ref: "191-9535-2",
-      img: "C:\\Project2\\Photos\\191-9535-2.jfif",
-      details: (
-        <>
-          Spare Part Name - Take out tong head Assembly<br />
-          Machine Size - <br />
-          Reference No -191-9535-2<br />
-          Lead Time - 9 weeks<br />
-          Weight - <br />
-          Machine Type - <br />
-          Kit Availability - <br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - <br />
-          Notes for Customer - <br />
-        </>
-      ),
-    },
-
-    {
-      name: " ",
-      ref: "191-9535-2",
-      img: "C:\\Project2\\Photos\\191-9535-2.jfif",
-      details: (
-        <>
-          Spare Part Name - Take out tong head Assembly<br />
-          Machine Size - <br />
-          Reference No -191-9535-2<br />
-          Lead Time - 9 weeks<br />
-          Weight - <br />
-          Machine Type - <br />
-          Kit Availability - <br />
-          Availability - <input type="number" min="1" max="100" placeholder="1-100" className="input" style={{ width: "60px" }} /><br />
-          General Description - <br />
-          Reference 1 - <br />
-          Production Time - <br />
-          Notes for Customer - <br />
-        </>
-      ),
-
-    }
-  ];
-
-function sendEmail(partName, partRef) {
-  const userName = window.prompt("Enter your name:");
-  if (userName) {
-    const email = "sales.l01gen@verallia.com";
-    const subject = `Request for ${partName} (${partRef})`;
-    const body = `Dear Sales Team,%0D%0A%0D%0AI am interested in the ${partName} (${partRef}).Could you please provide details on the following:%0D%0A%0D%0A Spares-%0D%0A Quantity-[ ]%0D%0A Additionally,could you please provide Quotation for ${partName}?%0D%0A%0D%0AThanks!%0D%0A%0D%0ABest Regards,%0D%0A${encodeURIComponent(userName)}`;
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-  }
-}
-
-import { useState } from "react";
-
-
-const Assembly = () => {
-=======
 import React, { useState, useEffect } from "react";
 
-const ASSEMBLY = () => {
->>>>>>> 3f809eb917c561c84a791ba48d1c75097fb66e4c
+const MECHANISM = () => {
   const [search, setSearch] = useState("");
   const [modalImg, setModalImg] = useState(null);
   const [showDesc, setShowDesc] = useState({});
@@ -168,21 +12,21 @@ const ASSEMBLY = () => {
 
   const parts = [
     {
-      "name": "Mould Insert Set 1363",
-      "ref": "09750152",
+      "name": "Baffle Mechanism 4 1/4 5\"",
+      "ref": "200-248-3",
       "img": "https://placehold.co/400x300",
-      "alt": "Mould Insert Set 1363",
+      "alt": "Baffle Mechanism 4 1/4 5\"",
       "details": {
-        "Mechanism Name": "Mould Insert Set 1363",
-        "Reference No": "09750152",
+        "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
+        "Reference No": "200-248-3",
         "UOM": "EA",
         "Weight": "57.600",
         "Lead Time": "10 weeks",
         "Assembly Reference 1": "N/A",
         "Machine Center Distance": "N/A",
-        "Machine Type": "IS ",
+        "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
         "Kit Availability": "200-248-3KB, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
-        "Machine Size": "127mm",
+        "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
         "Notes for Customer": "Check compatibility.",
         "Availability": "In Stock"
@@ -190,13 +34,13 @@ const ASSEMBLY = () => {
     },
 
     {
-      "name": "Mould Insert Set O 1363 181",
-      "ref": "09750153",
+      "name": "Baffle Mechanism 4 1/4\", 5\"",
+      "ref": "200-248-4",
       "img": "https://placehold.co/400x300",
-      "alt": "Mould Insert Set O 1363 181",
+      "alt": "Baffle Mechanism 4 1/4\", 5\"",
       "details": {
-        "Mechanism Name": "Mould Insert Set O 1363 181",
-        "Reference No": "09750153",
+        "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
+        "Reference No": "200-248-4",
         "Availability": "N/A",
         "Price": "N/A",
         "Unit": "N/A",
@@ -206,19 +50,19 @@ const ASSEMBLY = () => {
         "Machine Center Distance": "N/A",
         "Machine Type": "STR",
         "Kit Availability": "N/A",
-        "Machine Size": "127mm ",
+        "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "N/A",
         "Notes for Customer": "N/A"
       }
     },
 
     {
-      "name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
-      "ref": "210-320-2",
+      "name": "Baffle Mechanism 5 1/2\"",
+      "ref": "210-146-1",
       "img": "https://placehold.co/400x300",
-      "alt": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+      "alt": "Baffle Mechanism 5 1/2\"",
       "details": {
-        "Mechanism Name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+        "Mechanism Name": "Baffle Mechanism 5 1/2\"",
         "Reference No": "210-146-1",
         "Availability": "N/A",
         "Unit": "N/A",
@@ -1037,4 +881,4 @@ const ASSEMBLY = () => {
   );
 };
 
-export default ASSEMBLY;
+export default MECHANISM;

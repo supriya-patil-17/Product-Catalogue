@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const SpareParts = () => {
+const VARIABLES = () => {
     const [search, setSearch] = useState("");
     const [modalImg, setModalImg] = useState(null);
     const [showDesc, setShowDesc] = useState({});
@@ -644,7 +644,7 @@ const SpareParts = () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
     },
-        [showComparison, showCart, modalImg]);
+        ["showComparison", "showCart", "modalImg"]);
 
     const renderComparisonModal = () => (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
@@ -777,7 +777,7 @@ const SpareParts = () => {
 
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-6 sm:px-8 lg:px-10">
-            <h1 className="text-5xl font-bold text-gray-900 text-center mb-10">MECHANISMS</h1>
+            <h1 className="text-5xl font-bold text-gray-900 text-center mb-10">VARIABLES</h1>
 
             <div className="max-w-4xl mx-auto mb-10">
                 <input
@@ -832,19 +832,9 @@ const SpareParts = () => {
                                 <div className="mt-4">
                                     <div className="text-sm space-y-2">
                                         {Object.entries(part.details).map(([key, value]) => (
-                                            <div key={key} className="flex flex-col mb-2">
-                                                {key === "Kit Availability" && value ? (
-                                                    <>
-                                                        <span className="font-medium">Kit Availability:</span>
-                                                        <ul className="list-disc list-inside ml-4">
-                                                            {value.split(',').map((kit, idx) => (
-                                                                <li key={idx}>{kit.trim()}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </>
-                                                ) : (
-                                                    <span><span className="font-medium">{key}:</span> <span className="ml-2">{value || '-'}</span></span>
-                                                )}
+                                            <div key={key} className="flex">
+                                                <span className="font-medium w-40">{key}:</span>
+                                                <span className="flex-1">{value || '-'}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -883,4 +873,4 @@ const SpareParts = () => {
     );
 };
 
-export default SpareParts
+export default VARIABLES;

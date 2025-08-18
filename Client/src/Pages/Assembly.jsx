@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Assembly from "../Components/Assembly";
 
-const SpareParts = () => {
+const ASSEMBLY = () => {
     const [search, setSearch] = useState("");
     const [modalImg, setModalImg] = useState(null);
     const [showDesc, setShowDesc] = useState({});
@@ -12,67 +13,69 @@ const SpareParts = () => {
 
     const parts = [
         {
-            "name": "QC BAFFLE ARM 5 1/2 DG",
-            "ref": "23-1435-2",
+            "name": "Mould Insert Set 1363",
+            "ref": "09750152",
             "img": "https://placehold.co/400x300",
-            "alt": "QC BAFFLE ARM 5 1/2 DG",
+            "alt": "Mould Insert Set 1363",
             "details": {
-                "Variable Name": "QC BAFFLE ARM 5 1/2 DG",
-                "Reference No": "23-1435-2",
-                "UOM Weight": "Kg",
+                "Mechanism Name": "Mould Insert Set 1363",
+                "Reference No": "09750152",
+                "UOM": "EA",
                 "Weight": "57.600",
-                "Lead Time": "2 weeks",
-                "Machine Center Distance": "5 1/2\"",
-                "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
-                "Kit Availability": "200-248-3K, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
+                "Lead Time": "10 weeks",
+                "Assembly Reference 1": "N/A",
+                "Machine Center Distance": "N/A",
+                "Machine Type": "IS ",
+                "Kit Availability": "200-248-3KB, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
+                "Machine Size": "127mm",
                 "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-                "Baffle Motion": "CONVENTIONAL",
-                "Notes for Customer": "N/A",
-                "Availability": " N/A",
+                "Notes for Customer": "Check compatibility.",
+                "Availability": "In Stock"
             }
         },
 
         {
-            "name": "QC BAFFLE ARM 6 1/4 DG",
-            "ref": "23-1435-3",
+            "name": "Mould Insert Set O 1363 181",
+            "ref": "09750153",
             "img": "https://placehold.co/400x300",
-            "alt": "QC BAFFLE ARM 6 1/4 DG",
+            "alt": "Mould Insert Set O 1363 181",
             "details": {
-                "Variable Name": "QC BAFFLE ARM 6 1/4 DG",
-                "Reference No": "23-1435-3",
-                "UOM Weight": "Kg",
+                "Mechanism Name": "Mould Insert Set O 1363 181",
+                "Reference No": "09750153",
+                "Availability": "N/A",
+                "Price": "N/A",
+                "Unit": "N/A",
                 "Weight": "64.319",
                 "Lead Time": "8 weeks",
-                "Machine Center Distance": "6 1/4\",",
-                "Machine Type": "IS LARGE 6 1/4\", AIS",
-                "Kit Availability": "23-1435-3KB, 23-1435-3KC",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
-                "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-                "Baffle Motion": "CONVENTIONAL",
-                "Notes for Customer": "N/A",
-                "Availability": "N/A",
+                "Assembly Reference 1": "N/A",
+                "Machine Center Distance": "N/A",
+                "Machine Type": "STR",
+                "Kit Availability": "N/A",
+                "Machine Size": "127mm ",
+                "General Description": "N/A",
+                "Notes for Customer": "N/A"
             }
         },
 
         {
-            "name": "BLOWHEAD ARM 5 1/2 DG T",
-            "ref": "200-202-14",
+            "name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+            "ref": "210-320-2",
             "img": "https://placehold.co/400x300",
-            "alt": "BLOWHEAD ARM 5 1/2 DG T",
+            "alt": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
             "details": {
-                "Variable Name": "BLOWHEAD ARM 5 1/2 DG T",
-                "Reference No": "200-202-14",
-                "UOM Weight": "Kg",
+                "Mechanism Name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+                "Reference No": "210-146-1",
+                "Availability": "N/A",
+                "Unit": "N/A",
                 "Weight": "62.600",
                 "Lead Time": "8 weeks",
+                "Assembly Reference 1": "N/A",
                 "Machine Center Distance": "N/A",
-                "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
-                "Kit Availability": "200-202-14KC",
+                "Machine Type": "STR",
+                "Kit Availability": "N/A",
                 "Machine Size": "5 1/2\"",
-                "General Description": "BLOWHEAD ARM 5 1/2 DG T",
-                "Notes for Customer": "N/A",
-                "Availability": "N/A",
+                "General Description": "N/A",
+                "Notes for Customer": "N/A"
             }
         },
 
@@ -84,16 +87,18 @@ const SpareParts = () => {
             "details": {
                 "Mechanism Name": "Blow head Mechanism 5",
                 "Reference No": "200-249-1",
+                "Availability": "N/A",
                 "Price": "N/A",
-                "UOM Weight": "Kg",
+                "Unit": "N/A",
                 "Weight": "62.821",
                 "Lead Time": "8 weeks",
-                "Machine Type": "IS SMALL 4 1/4”,",
-                "Kit Availability": "200-249-1KB, 200-249-1KC, 200-249-1KD",
+                "Assembly Reference 1": "N/A",
+                "Machine Center Distance": "N/A",
+                "Machine Type": "STR",
+                "Kit Availability": "N/A",
                 "Machine Size": "85mm, 4 1/4\", 5\"",
                 "General Description": "N/A",
-                "Notes for Customer": "N/A",
-                "Availability": "N/A",
+                "Notes for Customer": "N/A"
             }
         },
 
@@ -223,7 +228,7 @@ const SpareParts = () => {
                 "Availability": "N/A",
                 "Price": "N/A",
                 "Unit": "N/A",
-                "Weight": "N/A",
+                "Weight": "44.693",
                 "Lead Time": "8 weeks",
                 "Assembly Reference 1": "N/A",
                 "Machine Center Distance": "N/A",
@@ -246,7 +251,7 @@ const SpareParts = () => {
                 "Availability": "N/A",
                 "Price": "N/A",
                 "Unit": "N/A",
-                "Weight": "N/A",
+                "Weight": "44.764",
                 "Lead Time": "8 weeks",
                 "Assembly Reference 1": "N/A",
                 "Machine Center Distance": "N/A",
@@ -257,7 +262,6 @@ const SpareParts = () => {
                 "Notes for Customer": "N/A"
             }
         },
-
 
         {
             "name": "Funnel Mechanism 4-1/4\", 5\"",
@@ -591,13 +595,11 @@ const SpareParts = () => {
         part.ref.toLowerCase().includes(search.toLowerCase())
     );
 
-    const addToComparison = (part) => {
-        setSelectedParts(prev => {
-            if (prev.find(p => p.ref === part.ref)) {
-                return prev.filter(p => p.ref !== part.ref); // Remove if already selected
-            }
-            return [...prev, part]; // Add to comparison
-        });
+    const handleShowDesc = (idx) => {
+        setShowDesc(prev => ({
+            ...prev,
+            [idx]: !prev[idx]
+        }));
     };
 
     const addToCart = (part) => {
@@ -627,13 +629,13 @@ const SpareParts = () => {
     const handleKeyDown = (event) => {
         if (event.key === "Escape") {
             if (showComparison) {
-                setShowComparison(false); // Close comparison modal
+                setShowComparison(false);
             }
             if (showCart) {
-                setShowCart(false); // Close cart modal
+                setShowCart(false);
             }
             if (modalImg) {
-                setModalImg(null); // Close image modal
+                setModalImg(null);
             }
         }
     };
@@ -643,24 +645,23 @@ const SpareParts = () => {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    },
-        [showComparison, showCart, modalImg]);
+    }, [showComparison, showCart, modalImg]);
 
     const renderComparisonModal = () => (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-lg w-full max-w-5xl p-6 overflow-auto max-h-[80vh]">
-                <h2 className="text-2xl font-bold mb-4">Compare Parts</h2>
+            <div className="bg-white rounded-lg w-full max-w-3xl p-4 overflow-auto max-h-[80vh]">
+                <h2 className="text-xl font-bold mb-4">Compare Parts</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full border">
                         <thead>
                             <tr>
-                                <th className="border p-4">Feature</th>
+                                <th className="border p-2">Feature</th>
                                 {selectedParts.map(part => (
-                                    <th key={part.ref} className="border p-4 text-center">
+                                    <th key={part.ref} className="border p-2 text-center">
                                         <img
                                             src={part.img}
                                             alt={part.alt}
-                                            className="h-24 mx-auto mb-2"
+                                            className="h-20 mx-auto mb-2"
                                             onClick={() => setModalImg(part.img)}
                                         />
                                         <div className="font-semibold">{part.name}</div>
@@ -670,11 +671,11 @@ const SpareParts = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {Object.keys(selectedParts[0].details).map(key => (
+                            {Object.keys(parts[0].details).map(key => (
                                 <tr key={key}>
-                                    <td className="border p-4 font-medium">{key}</td>
+                                    <td className="border p-2 font-medium">{key}</td>
                                     {selectedParts.map(part => (
-                                        <td key={`${part.ref}-${key}`} className="border p-4 text-center">
+                                        <td key={`${part.ref}-${key}`} className="border p-2 text-center">
                                             {part.details[key] || "N/A"}
                                         </td>
                                     ))}
@@ -685,8 +686,7 @@ const SpareParts = () => {
                 </div>
                 <button
                     onClick={() => setShowComparison(false)}
-                    aria-label="Close Comparison"
-                    className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
                     Close Comparison
                 </button>
@@ -740,7 +740,7 @@ const SpareParts = () => {
                         type="text"
                         placeholder="Enter your name"
                         value={userName}
-                        onChange={(e) => setUserName(e.target.value)}
+                        onChange={(e) => setUserName(e.target.value)} // Corrected line
                         className="w-full px-4 py-2 border border-gray-300 rounded-lg"
                     />
                     <button
@@ -761,13 +761,15 @@ const SpareParts = () => {
                 </div>
                 <button
                     onClick={() => setShowCart(false)}
-                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-350"
+                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
                     Close Cart
-                </button>
+                </button>,
+
+
                 <button
                     onClick={() => setCart([])}
-                    className="mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-red-700"
+                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >
                     Clear Cart
                 </button>
@@ -776,37 +778,37 @@ const SpareParts = () => {
     );
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-6 sm:px-8 lg:px-10">
-            <h1 className="text-5xl font-bold text-gray-900 text-center mb-10">MECHANISMS</h1>
+        <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+            <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">ASSEMBLY PARTS</h1>
 
-            <div className="max-w-4xl mx-auto mb-10">
+            <div className="max-w-3xl mx-auto mb-8">
                 <input
                     type="text"
                     placeholder="Search by name or reference number"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full px-6 py-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredParts.map((part, idx) => (
                     <div key={part.ref} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
                         <img
                             src={part.img}
                             alt={part.alt}
-                            className="w-full h-56 object-contain cursor-pointer"
+                            className="w-full h-48 object-contain cursor-pointer"
                             onClick={() => setModalImg(part.img)}
                         />
-                        <div className="p-6">
-                            <h3 className="text-xl font-semibold text-gray-900">{part.name}</h3>
+                        <div className="p-4">
+                            <h3 className="text-lg font-semibold text-gray-900">{part.name}</h3>
                             <p className="text-gray-600 mb-2">Ref: {part.ref}</p>
 
-                            <div className="flex justify-between items-center mb-4">
+                            <div className="flex justify-between items-center mb-2">
                                 <button
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        setShowDesc(prev => ({ ...prev, [idx]: !prev[idx] }));
+                                        handleShowDesc(idx);
                                     }}
                                     className="text-blue-600 hover:text-blue-800 font-medium"
                                 >
@@ -814,17 +816,12 @@ const SpareParts = () => {
                                 </button>
 
                                 <button
-                                    onClick={() => addToCart(part)}
-                                    className={`px-4 py-2 rounded-md text-xs font-medium ${selectedParts.find(p => p.ref === part.ref) ? 'bg-black-100 text-orange-800 hover:bg-black-200' : 'bg-gray-100 text-black-800 hover:bg-gray-200'}`}
+                                    onClick={() => {
+                                        addToCart(part);
+                                    }}
+                                    className="px-3 py-1.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800 hover:bg-gray-200"
                                 >
-                                    {selectedParts.find(p => p.ref === part.ref) ? 'Added To Cart' : 'Add to Cart'}
-                                </button>
-
-                                <button
-                                    onClick={() => addToComparison(part)}
-                                    className={`px-4 py-2 rounded-md text-xs font-medium ${selectedParts.find(p => p.ref === part.ref) ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800'} hover:bg-gray-200`}
-                                >
-                                    {selectedParts.find(p => p.ref === part.ref) ? 'Remove from Comparison' : 'Add to Comparison'}
+                                    Add to Cart
                                 </button>
                             </div>
 
@@ -832,19 +829,9 @@ const SpareParts = () => {
                                 <div className="mt-4">
                                     <div className="text-sm space-y-2">
                                         {Object.entries(part.details).map(([key, value]) => (
-                                            <div key={key} className="flex flex-col mb-2">
-                                                {key === "Kit Availability" && value ? (
-                                                    <>
-                                                        <span className="font-medium">Kit Availability:</span>
-                                                        <ul className="list-disc list-inside ml-4">
-                                                            {value.split(',').map((kit, idx) => (
-                                                                <li key={idx}>{kit.trim()}</li>
-                                                            ))}
-                                                        </ul>
-                                                    </>
-                                                ) : (
-                                                    <span><span className="font-medium">{key}:</span> <span className="ml-2">{value || '-'}</span></span>
-                                                )}
+                                            <div key={key} className="flex">
+                                                <span className="font-medium w-40">{key}:</span>
+                                                <span className="flex-1">{value || '-'}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -855,32 +842,44 @@ const SpareParts = () => {
                 ))}
             </div>
 
-            {
-                selectedParts.length > 0 && (
-                    <button
-                        onClick={() => setShowComparison(true)}
-                        className={`fixed bottom-4 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-blue-600 hover:bg-blue-700`}
+            {modalImg && (
+                <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+                    <span
+                        className="absolute top-4 right-6 text-white text-4xl cursor-pointer"
+                        onClick={() => setModalImg(null)}
                     >
-                        Compare ({selectedParts.length})
-                    </button>
-                )
-            }
+                        &times;
+                    </span>
+                    <img
+                        src={modalImg}
+                        alt="Enlarged view"
+                        className="max-w-full max-h-full"
+                    />
+                </div>
+            )}
 
-            {
-                cart.length > 0 && (
-                    <button
-                        onClick={() => setShowCart(true)}
-                        className="fixed bottom-16 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-green-600 hover:bg-green-700"
-                    >
-                        View Cart ({cart.length})
-                    </button>
-                )
-            }
+            {selectedParts.length > 0 && (
+                <button
+                    onClick={() => setShowComparison(true)}
+                    className={`fixed bottom-4 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-blue-600 hover:bg-blue-700`}
+                >
+                    Compare ({selectedParts.length})
+                </button>
+            )}
+
+            {cart.length > 0 && (
+                <button
+                    onClick={() => setShowCart(true)}
+                    className="fixed bottom-16 right-4 px-4 py-2 rounded-lg text-white font-medium shadow-lg bg-green-600 hover:bg-green-700"
+                >
+                    View Cart ({cart.length})
+                </button>
+            )}
 
             {showComparison && renderComparisonModal()}
             {showCart && renderCartModal()}
-        </div >
+        </div>
     );
 };
 
-export default SpareParts
+export default ASSEMBLY;
