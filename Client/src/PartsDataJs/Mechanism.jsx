@@ -364,18 +364,20 @@ const Mechanism = () => {
             "details": {
                 "Mechanism Name": "Funnel Mechanism 5 1/2\", 6 1/4\"",
                 "Reference No": "23-13-3",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
-                "Weight": "56.500",
+                "UOM": "Kg",
+                "Weight": "56",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "8\" 100 mm",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "8\" 100 mm",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -385,20 +387,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Funnel mechanism 6\"",
             "details": {
-                "Spare Part Name ": "Funnel mechanism 6\"",
+                "Mechanism Name": "Funnel mechanism 6\"",
                 "Reference No": "07123750",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "6\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "6\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A",
             }
         },
 
@@ -409,20 +413,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
             "details": {
-                "Spare Part Name ": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
+                "Mechanism Name": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
                 "Reference No": "191-7481-10",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
-                "Weight": "44.764",
+                "UOM": "Kg",
+                "Weight": "44",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "85mm, 4 1/4\", 5\", 5 1/2\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "85mm, 4 1/4\", 5\", 5 1/2\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -432,20 +438,23 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
             "details": {
-                "Spare Part Name ": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
+                "Mechanism Name": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
                 "Reference No": "191-7481-11",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "44.693",
                 "Lead Time": "8 weeks",
                 "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "6 1/4\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "6 1/4\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -455,20 +464,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Invert Mechanism 5 ½”",
             "details": {
-                "Spare Part Name ": "Invert Mechanism 5 ½”",
+                "Mechanism Name": "Invert Mechanism 5 ½”",
                 "Reference No": "07126020",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "44.764",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "5 ½”",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "5 ½”",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -478,20 +489,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
             "details": {
-                "Spare Part Name ": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
+                "Mechanism Name": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
                 "Reference No": "62-11030-04",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "5 1/2\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "5 1/2\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A",
             }
         },
 
@@ -501,20 +514,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Plunger Mechanism DG 5 1/2",
             "details": {
-                "Spare Part Name ": "Plunger Mechanism DG 5 1/2",
+                "Mechanism Name": "Plunger Mechanism DG 5 1/2",
                 "Reference No": "62-11030-05",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "5 1/2\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "5 1/2\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -524,19 +539,23 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "QC Baffle Mechanism 5\" & 6\"",
             "details": {
-                "Spare Part Name ": "QC Baffle Mechanism 5\" & 6\"",
+                "Mechanism Name": "QC Baffle Mechanism 5\" & 6\"",
                 "Reference No": "07182040",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
                 "Machine Center Distance": "N/A",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "Machine Size": "5\", 6\"",
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -546,20 +565,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Take Out Mechanism 6\"",
             "details": {
-                "Spare Part Name ": "Take Out Mechanism 6\"",
+                "Mechanism Name ": "Take Out Mechanism 6\"",
                 "Reference No": "07183900-09",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "6\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "6\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -569,20 +590,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "Take out Mechanism 5 ½”",
             "details": {
-                "Spare Part Name ": "Take out Mechanism 5 ½”",
+                "Mechanism Name ": "Take out Mechanism 5 ½”",
                 "Reference No": "07135050-03",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "5 ½”",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "5 ½”",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             }
         },
 
@@ -592,20 +615,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "6\" Blank support Mechanism",
             "details": {
-                "Spare Part Name ": "6\" Blank support Mechanism",
+                "Mechanism Name ": "6\" Blank support Mechanism",
                 "Reference No": "07100180",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "Kg",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "6\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "6\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A "
             }
         },
 
@@ -615,20 +640,22 @@ const Mechanism = () => {
             "img": "https://placehold.co/400x300",
             "alt": "6\" Blow Support Mechanism",
             "details": {
-                "Spare Part Name ": "6\" Blow Support Mechanism",
+                "Mechanism Name ": "6\" Blow Support Mechanism",
                 "Reference No": "07100190",
-                "Availability": "N/A",
-                "Price": "N/A",
-                "Unit": "N/A",
+                "UOM": "N/A",
                 "Weight": "N/A",
                 "Lead Time": "8 weeks",
-                "Assembly Reference 1": "N/A",
-                "Machine Center Distance": "N/A",
+                "Machine Center Distance": "6\"",
                 "Machine Type": "STR",
-                "Kit Availability": "N/A",
-                "Machine Size": "6\"",
+                "Kit Availability": (
+                    <UL>
+                        <li>N/A</li>
+                    </UL>
+                ),
                 "General Description": "N/A",
-                "Notes for Customer": "N/A"
+                "Availability": "N/A",
+                "Notes for Customer": "N/A",
+                "Price": "N/A"
             },
         },
     ];
