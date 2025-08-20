@@ -627,13 +627,13 @@ const REPAIRKIT = () => {
     const handleKeyDown = (event) => {
         if (event.key === "Escape") {
             if (showComparison) {
-                setShowComparison(false); // Close comparison modal
+                setShowComparison(false); 
             }
             if (showCart) {
-                setShowCart(false); // Close cart modal
+                setShowCart(false); 
             }
             if (modalImg) {
-                setModalImg(null); // Close image modal
+                setModalImg(null); 
             }
         }
     };
