@@ -17,21 +17,24 @@ const VARIABLES = () => {
             "img": "https://placehold.co/400x300",
             "alt": "QC BAFFLE ARM 5 1/2 DG",
             "details": {
+
                 "Variable Name": "QC BAFFLE ARM 5 1/2 DG",
                 "Reference No": "23-1435-2",
                 "UOM Weight": "Kg",
-                "Weight": "57.600",
-                "Lead Time": "2 weeks",
-                "Machine Center Distance": "5 1/2\"",
-                "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
-                "Kit Availability": "200-248-3K, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
-                "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+                "Weight": "7",
+                "Lead Time": "N/A",
+                "Machine Center Distance": "62mm 5 1/2\"",
+                "Machine Type": "IS LARGE 5 1/2”",
+                "Kit Availability": "23-1435-2KB, 23-1435-2KC",
+                "General Description": "QC BAFFLE ARM 5 1/2 DG",
                 "Baffle Motion": "CONVENTIONAL",
                 "Notes for Customer": "N/A",
-                "Availability": " N/A",
-            }
+                "Availability": "N/A",
+                "Price": "N/A"
+            },
+
         },
+
 
         {
             "name": "QC BAFFLE ARM 6 1/4 DG",
@@ -41,19 +44,27 @@ const VARIABLES = () => {
             "details": {
                 "Variable Name": "QC BAFFLE ARM 6 1/4 DG",
                 "Reference No": "23-1435-3",
-                "UOM Weight": "Kg",
-                "Weight": "64.319",
-                "Lead Time": "8 weeks",
-                "Machine Center Distance": "6 1/4\",",
-                "Machine Type": "IS LARGE 6 1/4\", AIS",
-                "Kit Availability": "23-1435-3KB, 23-1435-3KC",
-                "Machine Size": "85mm, 4 1/4\", 5\"",
-                "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-                "Baffle Motion": "CONVENTIONAL",
-                "Notes for Customer": "N/A",
-                "Availability": "N/A",
+                "UOM": " ",
+                "Weight": " ",
+                "UOM Weight": " ",
+                "Supersedes": " ",
+                "Machine Type": " ",
+                "Cavity": " ",
+                "Machine Center Distance": " ",
+                "Blowhead Diameter (Mm)": " ",
+                "Change Method": " ",
+                "Lock Type": " ",
+                "Cooling": " ",
+                "Kit Availability": " ",
+                "General Description": " ",
+                "Availability": " ",
+                "Notes For Customer": " ",
+                "Price": " ",
+
+
             }
         },
+
 
         {
             "name": "BLOWHEAD ARM 5 1/2 DG T",
@@ -76,6 +87,7 @@ const VARIABLES = () => {
             }
         },
 
+
         {
             "name": "Blow Head Mechanism 5",
             "ref": "200-249-1",
@@ -96,6 +108,7 @@ const VARIABLES = () => {
                 "Availability": "N/A",
             }
         },
+
 
         {
             "name": "Blow head Mechanism 4 1/4, 5\"",
@@ -143,6 +156,7 @@ const VARIABLES = () => {
             }
         },
 
+
         {
             "name": "Blow head Mechanism 41 /4”, 5”",
             "ref": "200-249-2",
@@ -188,6 +202,7 @@ const VARIABLES = () => {
                 "Notes for Customer": "N/A"
             }
         },
+
 
         {
             "name": "Blow Head Mech 5 ½”",
@@ -432,7 +447,7 @@ const VARIABLES = () => {
                 "Availability": "N/A",
                 "Price": "N/A",
                 "Unit": "N/A",
-                "Weight": "N/A",
+                "Weight": " ",
                 "Lead Time": "8 weeks",
                 "Assembly Reference 1": "N/A",
                 "Machine Center Distance": "N/A",

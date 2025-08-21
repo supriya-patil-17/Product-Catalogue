@@ -458,30 +458,6 @@ const Mechanism = () => {
             }
         },
 
-        {
-            "name": "Invert Mechanism 5 ½”",
-            "ref": "07126020",
-            "img": "https://placehold.co/400x300",
-            "alt": "Invert Mechanism 5 ½”",
-            "details": {
-                "Mechanism Name": "Invert Mechanism 5 ½”",
-                "Reference No": "07126020",
-                "UOM": "Kg",
-                "Weight": "44.764",
-                "Lead Time": "8 weeks",
-                "Machine Center Distance": "5 ½”",
-                "Machine Type": "STR",
-                "Kit Availability": (
-                    <UL>
-                        <li>N/A</li>
-                    </UL>
-                ),
-                "General Description": "N/A",
-                "Availability": "N/A",
-                "Notes for Customer": "N/A",
-                "Price": "N/A"
-            }
-        },
 
         {
             "name": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
@@ -492,7 +468,7 @@ const Mechanism = () => {
                 "Mechanism Name": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
                 "Reference No": "62-11030-04",
                 "UOM": "Kg",
-                "Weight": "N/A",
+                "Weight": "48",
                 "Lead Time": "8 weeks",
                 "Machine Center Distance": "5 1/2\"",
                 "Machine Type": "STR",
@@ -517,7 +493,7 @@ const Mechanism = () => {
                 "Mechanism Name": "Plunger Mechanism DG 5 1/2",
                 "Reference No": "62-11030-05",
                 "UOM": "Kg",
-                "Weight": "N/A",
+                "Weight": "44",
                 "Lead Time": "8 weeks",
                 "Machine Center Distance": "5 1/2\"",
                 "Machine Type": "STR",

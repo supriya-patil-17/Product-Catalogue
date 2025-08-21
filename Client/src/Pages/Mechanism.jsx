@@ -23,15 +23,22 @@ const Mechanism = () => {
         "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
         "Reference No": "200-248-3",
         "UOM Weight": "Kg",
-        "Weight": "57.600",
-        "Lead Time": "2 weeks",
-        "Machine Center Distance": "N/A",
+        "Weight": "57",
+        "Lead Time": "12 weeks",
+        "Machine Center Distance": "85mm, 4 1/4\", 5\"",
         "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
-        "Kit Availability": "200-248-3K, 200-248-3KC, 200-248-3KD1, 200-248-3KD2",
-        "Machine Size": "85mm, 4 1/4\", 5\"",
+        "Kit Availability": (
+          <ul>
+            <li>-200-248-3K</li>
+            <li>-200-248-3KC</li>
+            <li>-200-248-3KD1</li>
+            <li>-200-248-3KD2</li>
+          </ul>
+        ),
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-        "Notes for Customer": "N/A",
         "Availability": " N/A",
+        "Notes for Customer": "N/A",
+        "Price": "N/A"
       }
     },
 
@@ -45,10 +52,15 @@ const Mechanism = () => {
         "Reference No": "200-248-4",
         "UOM Weight": "Kg",
         "Weight": "64.319",
-        "Lead Time": "8 weeks",
+        "Lead Time": "12 weeks",
         "Machine Center Distance": "N/A",
         "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
-        "Kit Availability": "200-248-4KB,200-248-4KC",
+        "Kit Availability": (
+          <ul>
+            <li>-200-248-4KB</li>
+            <li>-200-248-4KC</li>
+          </ul>
+        ),
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
         "Notes for Customer": "N/A",
@@ -692,8 +704,8 @@ const Mechanism = () => {
                   <button
                     onClick={() => toggleSelectForComparison(part)}
                     className={`px-3 py-1.5 rounded-md text-xs font-medium ${selectedParts.find((p) => p.ref === part.ref)
-                        ? "bg-blue-600 text-white"
-                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-100 text-gray-800 hover:bg-gray-200"
                       }`}
                   >
                     {selectedParts.find((p) => p.ref === part.ref)

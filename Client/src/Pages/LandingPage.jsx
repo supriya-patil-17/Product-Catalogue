@@ -117,7 +117,7 @@ const LandingPage = () => {
 
           {/* Card: Mechanism */}
           <Link
-            to="/dashboard/mechanism"
+            to="/mechanism"
             className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform"
           >
             <FaTools className="text-4xl text-indigo-600 mb-4" />
@@ -129,7 +129,7 @@ const LandingPage = () => {
 
           {/*Card: RepairKit */}
           <Link
-            to="/dashboard/repair-kit"
+            to="/repair-kit"
             className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center hover:scale-105 transition-transform"
           >
             <FaTools className="text-4xl text-indigo-600 mb-4" />
