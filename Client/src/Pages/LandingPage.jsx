@@ -71,8 +71,6 @@ const LandingPage = () => {
         </motion.div>
 
 
-
-
       </section>
 
 
@@ -153,19 +151,6 @@ export default LandingPage;
 //           >
 //             <FiMenu size={22} />
 //           </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  <motion.div
 //         initial={{ x: "100%" }}

@@ -15,30 +15,28 @@ const Assembly = () => {
 
     const parts = [
         {
-            "name": "Baffle Mechanism 4 1/4 5\"",
-            "ref": "200-248-3",
-            "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-3.jpg",
-            "alt": "Baffle Mechanism 4 1/4 5\"",
-            "details": {
-                "Mechanism Name": "Baffle Mechanism 4 1/4 5\"",
-                "Reference No": "200-248-3",
-                "UOM ": "Kg",
-                "Weight": "57",
-                "Lead Time": "2 weeks",
-                "Machine Center Distance": "85mm, 4 1/4\", 5\"",
-                "Machine Type": "IS SMALL 5”, IS SMALL 4 1/4”",
-                "Kit Availability": (
-                    <ul>
-                        <li>-200-248-3K</li>
-                        <li>-200-248-3KC</li>
-                        <li>-200-248-3KD1</li>
-                        <li>-200-248-3KD2</li>
-                    </ul>
-                ),
-                "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-                "Availability": " N/A",
-                "Notes for Customer": "N/A",
-                "Price": "N/A"
+            "name": "Mould Insert Set 1363",
+      "ref": "09750152",
+      "img": "https://placehold.co/400x300",
+      "alt": "Mould Insert Set 1363",
+      "details": {
+        "Assembly Name": "Mould Insert Set 1363",
+        "Reference No": "09750152",
+        "UOM Weight": "Kg",
+        "Weight": "N/A",
+        "Lead Time": "12 weeks",
+        "Machine Center Distance": "127mm",
+        "Machine Type": "IS ",
+        "Mould Size": "N/A",
+        "Kit Availability": (
+          <ul>
+            <li>N/A</li>
+          </ul>
+        ),
+        "General Description": "BAFFLE MECH 4 1/4 & 5\"",
+        "Availability": " N/A",
+        "Notes for Customer": "Check compatibility.",
+        "Price": "N/A",
             }
         },
 

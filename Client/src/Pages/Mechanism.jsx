@@ -51,10 +51,15 @@ const Mechanism = () => {
         "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
         "Reference No": "200-248-4",
         "UOM Weight": "Kg",
-        "Weight": "64.319",
+        "Weight": "64",
         "Lead Time": "12 weeks",
         "Machine Center Distance": "N/A",
-        "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
+        "Machine Type": (
+          <ul>
+            <li>IS SMALL 5"</li>
+            <li>IS SMALL 4 1/4\""</li>
+          </ul>
+        ),
         "Kit Availability": (
           <ul>
             <li>-200-248-4KB</li>
@@ -63,8 +68,10 @@ const Mechanism = () => {
         ),
         "Machine Size": "85mm, 4 1/4\", 5\"",
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-        "Notes for Customer": "N/A",
         "Availability": "N/A",
+        "Notes for Customer": "N/A",
+        "Price" : "N/A"
+        
       }
     },
 
@@ -81,7 +88,13 @@ const Mechanism = () => {
         "Lead Time": "8 weeks",
         "Machine Center Distance": "N/A",
         "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
-        "Kit Availability": "210-146-1KB, 210-146-1KC, 210-146-1KD",
+        "Kit Availability": (
+                      <ul>
+                        <li>210-146-1KB</li>
+                        <li>210-146-1KC</li>
+                        <li>210-146-1KD</li>
+                      </ul>
+                    ),
         "Machine Size": "5 1/2\"",
         "General Description": "BAFFLE MECH. EF 5 1/2\"",
         "Notes for Customer": "N/A",
