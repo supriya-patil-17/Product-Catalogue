@@ -70,8 +70,8 @@ const Mechanism = () => {
         "General Description": "BAFFLE MECH 4 1/4 & 5\"",
         "Availability": "N/A",
         "Notes for Customer": "N/A",
-        "Price" : "N/A"
-        
+        "Price": "N/A"
+
       }
     },
 
@@ -89,12 +89,12 @@ const Mechanism = () => {
         "Machine Center Distance": "N/A",
         "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
         "Kit Availability": (
-                      <ul>
-                        <li>210-146-1KB</li>
-                        <li>210-146-1KC</li>
-                        <li>210-146-1KD</li>
-                      </ul>
-                    ),
+          <ul>
+            <li>210-146-1KB</li>
+            <li>210-146-1KC</li>
+            <li>210-146-1KD</li>
+          </ul>
+        ),
         "Machine Size": "5 1/2\"",
         "General Description": "BAFFLE MECH. EF 5 1/2\"",
         "Notes for Customer": "N/A",
@@ -221,7 +221,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Neck ring holder assembly for machinery",
       "details": {
-        "Spare Part Name ": "Blow Head Mech 5 ½”",
+        "Mechanism Name ": "Blow Head Mech 5 ½”",
         "Reference No": "07129301-01",
         "Availability": "N/A",
         "Price": "N/A",
@@ -244,7 +244,7 @@ const Mechanism = () => {
       img: "https://placehold.co/400x300",
       alt: "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
       details: {
-        "Spare Part Name ": "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
+        "Mechanism Name ": "Constant Cushion Invert Mechanism 4 ¼” TG,6 1/4\" AIS,",
         "Reference No": " 191-7481-13",
         "Availability": "N/A",
         "Price": "N/A",
@@ -267,7 +267,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
       "details": {
-        "Spare Part Name ": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
+        "Mechanism Name ": "Constant Cushion Invert Mechanism 4 ¼ DG,5\",5 1/2\" IS",
         "Reference No": "191-7481-12",
         "Availability": "N/A",
         "Price": "N/A",
@@ -283,7 +283,6 @@ const Mechanism = () => {
         "Notes for Customer": "N/A"
       }
     },
-
 
     {
       "name": "Funnel Mechanism 4-1/4\", 5\"",
@@ -360,7 +359,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Funnel mechanism 6\"",
       "details": {
-        "Spare Part Name ": "Funnel mechanism 6\"",
+        "Mechanism Name ": "Funnel mechanism 6\"",
         "Reference No": "07123750",
         "Availability": "N/A",
         "Price": "N/A",
@@ -377,14 +376,13 @@ const Mechanism = () => {
       }
     },
 
-
     {
       "name": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
       "ref": "191-7481-10",
       "img": "https://placehold.co/400x300",
       "alt": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
       "details": {
-        "Spare Part Name ": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
+        "Mechanism Name ": "Invert Mechanism 4 ¼” DG,5”,5 1/2\" IS",
         "Reference No": "191-7481-10",
         "Availability": "N/A",
         "Price": "N/A",
@@ -407,7 +405,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
       "details": {
-        "Spare Part Name ": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
+        "Mechanism Name ": "Invert Mechanism 4 ¼” TG,6 1/4\" AIS",
         "Reference No": "191-7481-11",
         "Availability": "N/A",
         "Price": "N/A",
@@ -430,7 +428,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Invert Mechanism 5 ½”",
       "details": {
-        "Spare Part Name ": "Invert Mechanism 5 ½”",
+        "Mechanism Name ": "Invert Mechanism 5 ½”",
         "Reference No": "07126020",
         "Availability": "N/A",
         "Price": "N/A",
@@ -453,7 +451,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
       "details": {
-        "Spare Part Name ": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
+        "Mechanism Name ": "Plunger Mechanism DG 5 1/2\" (with shoulder bushing)",
         "Reference No": "62-11030-04",
         "Availability": "N/A",
         "Price": "N/A",
@@ -476,7 +474,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Plunger Mechanism DG 5 1/2",
       "details": {
-        "Spare Part Name ": "Plunger Mechanism DG 5 1/2",
+        "Mechanism Name ": "Plunger Mechanism DG 5 1/2",
         "Reference No": "62-11030-05",
         "Availability": "N/A",
         "Price": "N/A",
@@ -499,7 +497,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "QC Baffle Mechanism 5\" & 6\"",
       "details": {
-        "Spare Part Name ": "QC Baffle Mechanism 5\" & 6\"",
+        "Mechanism Name ": "QC Baffle Mechanism 5\" & 6\"",
         "Reference No": "07182040",
         "Availability": "N/A",
         "Price": "N/A",
@@ -521,7 +519,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Take Out Mechanism 6\"",
       "details": {
-        "Spare Part Name ": "Take Out Mechanism 6\"",
+        "Mechanism Name ": "Take Out Mechanism 6\"",
         "Reference No": "07183900-09",
         "Availability": "N/A",
         "Price": "N/A",
@@ -544,7 +542,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "Take out Mechanism 5 ½”",
       "details": {
-        "Spare Part Name ": "Take out Mechanism 5 ½”",
+        "Mechanism Name ": "Take out Mechanism 5 ½”",
         "Reference No": "07135050-03",
         "Availability": "N/A",
         "Price": "N/A",
@@ -567,7 +565,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "6\" Blank support Mechanism",
       "details": {
-        "Spare Part Name ": "6\" Blank support Mechanism",
+        "Mechanism Name ": "6\" Blank support Mechanism",
         "Reference No": "07100180",
         "Availability": "N/A",
         "Price": "N/A",
@@ -590,7 +588,7 @@ const Mechanism = () => {
       "img": "https://placehold.co/400x300",
       "alt": "6\" Blow Support Mechanism",
       "details": {
-        "Spare Part Name ": "6\" Blow Support Mechanism",
+        "Mechanism Name ": "6\" Blow Support Mechanism",
         "Reference No": "07100190",
         "Availability": "N/A",
         "Price": "N/A",
@@ -792,3 +790,5 @@ const Mechanism = () => {
 };
 
 export default Mechanism;
+
+

@@ -16,82 +16,86 @@ const Assembly = () => {
     const parts = [
         {
             "name": "Mould Insert Set 1363",
-      "ref": "09750152",
-      "img": "https://placehold.co/400x300",
-      "alt": "Mould Insert Set 1363",
-      "details": {
-        "Assembly Name": "Mould Insert Set 1363",
-        "Reference No": "09750152",
-        "UOM Weight": "Kg",
-        "Weight": "N/A",
-        "Lead Time": "12 weeks",
-        "Machine Center Distance": "127mm",
-        "Machine Type": "IS ",
-        "Mould Size": "N/A",
-        "Kit Availability": (
-          <ul>
-            <li>N/A</li>
-          </ul>
-        ),
-        "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-        "Availability": " N/A",
-        "Notes for Customer": "Check compatibility.",
-        "Price": "N/A",
-            }
-        },
-
-
-        {
-            "name": "Baffle Mechanism 4 1/4\", 5\"",
-            "ref": "200-248-4",
-            "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-4.jpg",
-            "alt": "Baffle Mechanism 4 1/4\", 5\"",
-            "details": {
-                "Mechanism Name": "Baffle Mechanism 4 1/4\", 5\"",
-                "Reference No": "200-248-4",
-                "UOM ": "Kg",
-                "Weight": "64.319",
-                "Lead Time": "8 weeks",
-                "Machine Center Distance": "85mm, 4 1/4\", 5\"",
-                "Machine Type": "IS SMALL 5\", IS SMALL 4 1/4\"",
-                "Kit Availability": (
-                    <ul>
-                        <li>-200-248-4KB</li>
-                        <li>-200-248-4KC</li>
-                    </ul>
-                ),
-                "General Description": "BAFFLE MECH 4 1/4 & 5\"",
-                "Availability": "N/A",
-                "Notes for Customer": "N/A",
-                "Price": "N/A"
-            }
-        },
-
-
-        {
-            "name": "Baffle Mechanism 5 1/2\"",
-            "ref": "210-146-1",
+            "ref": "09750152",
             "img": "https://placehold.co/400x300",
-            "alt": "Baffle Mechanism 5 1/2\"",
+            "alt": "Mould Insert Set 1363",
             "details": {
-                "Mechanism Name": "Baffle Mechanism 5 1/2\"",
-                "Reference No": "210-146-1",
-                "UOM ": "Kg",
-                "Weight": "62.600",
-                "Lead Time": "8 weeks",
-                "Machine Center Distance": "5 1/2\"",
-                "Machine Type": "IS LARGE 5 1/2\", AIS, IS LARGE 6 1/4\"",
+                "Assembly Name": "Mould Insert Set 1363",
+                "Reference No": "09750152",
+                "UOM Weight": "Kg",
+                "Weight": "N/A",
+                "Lead Time": "12 weeks",
+                "Machine Center Distance": "127mm ",
+                "Cavity": " TG",
+                "Machine Type": "IS ",
+                "Mould Size": "N/A",
                 "Kit Availability": (
                     <ul>
-                        <li>-210-146-1KB</li>
-                        <li>-210-146-1KC</li>
-                        <li>-210-146-1KD</li>
+                        <li>N/A</li>
                     </ul>
                 ),
-                "General Description": "BAFFLE MECH. EF 5 1/2\"",
-                "Availability": "N/A",
-                "Notes for Customer": "N/A",
-                "Price": "N/A"
+                "General Description": "Mould Insert Set 1363",
+                "Availability": " N/A",
+                "Notes for Customer": "Check compatibility.",
+                "Price": "N/A",
+            }
+        },
+
+
+        {
+            "name": "Mould Insert Set O 1363 181",
+            "ref": "09750153",
+            "img": "C:\\Users\\S8513154\\Desktop\\PartsImage\\200-248-4.jpg",
+            "alt": "Mould Insert Set O 1363 181",
+            "details": {
+                "Assembly Name": "Mould Insert Set O 1363 181",
+                "Reference No": "09750153",
+                "UOM Weight": "Kg",
+                "Weight": "N/A",
+                "Lead Time": "12 weeks",
+                "Machine Center Distance": "6 1/4\"",
+                "Cavity": " TG",
+                "Machine Type": "IS ",
+                "Mould Size": "127mm",
+                "Kit Availability": (
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                ),
+                "General Description": " ",
+                "Availability": " N/A",
+                "Notes for Customer": "Check compatibility.",
+                "Price": "N/A",
+
+            }
+        },
+
+
+        {
+            "name": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+            "ref": "210-320-2",
+            "img": "https://placehold.co/400x300",
+            "alt": "Lower 6” Blow Mold Holder Plate Assembly (Without Heat Correction) IS 6 ¼”",
+            "details": {
+                "Assembly Name": " ",
+                "Reference No": " ",
+                "UOM Weight": "Kg",
+                "Weight": "N/A",
+                "Lead Time": "12 weeks",
+                "Machine Center Distance": "127mm",
+                "Cavity": " DG",
+                "Machine Type": "IS ",
+                "Mould Size": "N/A",
+                "Kit Availability": (
+                    <ul>
+                        <li>N/A</li>
+                    </ul>
+                ),
+                "General Description": " ",
+                "Availability": " N/A",
+                "Notes for Customer": "Check compatibility.",
+                "Price": "N/A",
+
             }
         },
 
